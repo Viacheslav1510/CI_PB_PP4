@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container-fluid" style="padding: 0;">
     <!-- Background image -->
    <div class="row p-5 text-center bg-image"
@@ -21,11 +22,12 @@
 </div>
 <div class="container-fluid">
     <div class="row">
+        {% for post in posts %}
         <div class="col-md-4">
             <div class="card rounded m-2 shadow-sm border-0">
-                <div class="card-body p-4"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Carrauntoohil_2016.JPG" alt="featured_image" class="img-thumbnail d-block mx-auto mb-3">
-                  <h5> <a href="#" class="text-dark">Carrauntoohil</a></h5>
-                  <p class="small text-muted font-italic">As Ireland's highest mountain, Carrauntoohil is popular with mountain walkers, who most commonly ascend via the Devil's Ladder route</p>
+                <div class="card-body p-4"><img src="{{ post.featured_image.url }}" alt="featured_image" class="img-thumbnail d-block mx-auto mb-3">
+                  <h5> <a href="#" class="text-dark">{{ post.title }}</a></h5>
+                  <p class="small text-muted font-italic">{{ post.content }}</p>
                   <ul class="list-inline small">
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -36,12 +38,8 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-4">
-            
-        </div>
-        <div class="col-md-4">
-            asfsafasfs
-        </div>
+        {% endfor %}
+        
     </div>
 </div>
 
