@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <div class="container-fluid" style="padding: 0;">
     <!-- Background image -->
    <div class="row p-5 text-center bg-image"
         style="
-        background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-        height: 400px;
-        "
-    >
+        background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677755475/kerry_wgckh1.jpg');
+        height: 500px;
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;  
+        ">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <div class="d-flex justify-content-center align-items-center h-200">
+            <div class="d-flex justify-content-right align-items-center h-200">
                 <div class="text-white">
                     <h1 class="mb-3">Welcome to Kerry!</h1>
                     <h4 class="mb-3">The land of Neolithic monuments, medieval castles, quirky museums and allegedly – the world's oldest footprints. </h4>
@@ -25,16 +28,21 @@
         {% for post in posts %}
         <div class="col-md-4">
             <div class="card rounded m-2 shadow-sm border-0">
-                <div class="card-body p-4"><img src="{{ post.featured_image.url }}" alt="featured_image" class="img-thumbnail d-block mx-auto mb-3">
+                <div class="card-body p-4">
+                  <a href="" class="text-decoration-none">
+                    <img src="{{ post.featured_image.url }}" alt="featured_image" class="img-thumbnail d-block mx-auto mb-3" style="
+                    height: 250px; width: 90%;
+                ">
+                  </a>  
                   <h5> <a href="#" class="text-dark">{{ post.title }}</a></h5>
                   <p class="small text-muted font-italic">{{ post.content }}</p>
-                  <ul class="list-inline small">
+                  <!-- <ul class="list-inline small">
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                     <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
-                  </ul>
+                  </ul> -->
                 </div>
             </div> 
         </div>
@@ -42,5 +50,6 @@
         
     </div>
 </div>
+
 
 {% endblock %}

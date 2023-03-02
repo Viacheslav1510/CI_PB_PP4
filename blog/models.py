@@ -1,19 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
 class PostModel(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, unique=True)
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    rating = models.IntegerField(default=0,
-        validators=[
-            MaxValueValidator(5),
-            MinValueValidator(0),
-        ]
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='blog_posts',
     )
+    featured_image = CloudinaryField('image', default='placeholder')
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
