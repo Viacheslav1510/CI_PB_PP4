@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'active_link',
     'cloudinary',
     'crispy_forms',
+    'home',
     'blog',
     'accounts'
 ]
