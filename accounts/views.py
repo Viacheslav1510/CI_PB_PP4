@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
+from django.contrib.auth import logout
+from django.contrib import messages
 
 
 def register(request):
@@ -14,3 +16,20 @@ def register(request):
         'form': form,
     }
     return render(request, 'accounts/sign_up.html', context)
+
+
+def logout_confirm(request):
+    form = request.POST
+    if request.method == 'POST':
+        if form.get('logout'):
+            logout(request)
+            messages.success(request, "You've been logged out")
+            return redirect('blog')
+        else:
+            return render(request, 'accounts/login.html')
+
+    return render(request, 'accounts/logout.html')
+
+
+def logged_out(request):
+    return render(request, 'accounts/logout.html')

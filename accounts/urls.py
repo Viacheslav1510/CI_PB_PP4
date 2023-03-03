@@ -9,9 +9,6 @@ urlpatterns = [
         auth_views.LoginView.as_view(template_name='accounts/login.html'),
         name='accounts-login'
     ),
-    path(
-        'logout/',
-        auth_views.LogoutView.as_view(template_name='accounts/logout.html'),
-        name='accounts-logout'
-    ),
+    path('confirmation/', views.logout_confirm, name='logout-confirmation'),
+    path('logout/', views.logged_out, name='logged-out')
 ]
