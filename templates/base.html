@@ -1,3 +1,4 @@
+{% load active_link_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,15 +16,30 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mr-5">
             <li class="nav-item ">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Blog</a>
+            <li class="nav-item {% active_link 'blog' 'active' %}">
+              <a class="nav-link" href="{% url 'blog' %}">Blog</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Booking</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item {% active_link 'accounts-logout' 'active' %}">
+              <a class="nav-link" href="{% url 'accounts-logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item {% active_link 'accounts-register' 'active' %}">
+              <a class="nav-link" href="{% url 'accounts-register' %}">Sign Up</a>
+            </li>
+            <li class="nav-item {% active_link 'accounts-login' 'active' %}">
+              <a class="nav-link" href="{% url 'accounts-login' %}">Login</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
     </nav>
