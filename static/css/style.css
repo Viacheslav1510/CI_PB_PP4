@@ -1,0 +1,19 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-text-bottom h5 {
+    padding-top: 15%;
+    padding-left: 5%;
+}
+
+.row {
+    margin: 0;
+}
+
+
+footer{
+    margin-top: auto;
+}

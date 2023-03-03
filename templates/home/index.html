@@ -2,5 +2,31 @@
 {% load static %}
 
 {% block content %}
-HOME PAGE
+
+<div class="container-fluid" style="padding: 0;">
+    <!-- Background image -->
+   <div class="row p-5 bg-image"
+        style="
+        background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
+        height: 500px;
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;  
+        ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div>
+                <div class="text-white text-center">
+                    <h1 class="mb-3">Welcome to Kerry!</h1>
+                    <h4 class="mb-3">The land of Neolithic monuments, medieval castles, quirky museums and allegedly – the world's oldest footprints. </h4>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+                </div>
+                <div class="text-white main-text-bottom"> 
+                    <h5>Travel Knows No Borders</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
