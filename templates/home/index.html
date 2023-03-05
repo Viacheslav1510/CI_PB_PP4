@@ -5,22 +5,16 @@
 
 <div class="container-fluid" style="padding: 0;">
     <!-- Background image -->
-   <div class="row p-5 bg-image"
-        style="
-        background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
-        height: 500px;
-        background-size:     cover;
-        background-repeat:   no-repeat;
-        background-position: center center;  
-        ">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="row bg-image main-image">
+        <div class="col-8 offset-2 my-4 mask">
             <div>
-                <div class="text-white text-center">
+                <div class="text-white text-center ">
                     <h1 class="mb-3">Welcome to Kerry!</h1>
-                    <h4 class="mb-3">The land of Neolithic monuments, medieval castles, quirky museums and allegedly – the world's oldest footprints. </h4>
+                    <h4 class="mb-3">The land of Neolithic monuments, medieval castles, quirky museums and allegedly –
+                        the world's oldest footprints. </h4>
                     <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
                 </div>
-                <div class="text-white main-text-bottom"> 
+                <div class="text-white main-text-bottom">
                     <h5>Travel Knows No Borders</h5>
                 </div>
             </div>
@@ -28,5 +22,55 @@
     </div>
 </div>
 
+<div id="carouselControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row py-3 testimonial-row text-white">
+            <div class="col-sm-12 col-md-4">
+                <p class="d-flex justify-content-center"><img class="testimonial-img" src="{% static 'images/women-1.jpg' %}" alt="woman"></p>
+                <p class="d-flex justify-content-center"><em>Vento, New York</em></p>
+            </div>
+            <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                <h2 class="testimonial-text"> Kerry is my favorite place on the Earth. 
+                    I'm realy into this beautiful land!</h2>  
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row row py-3 testimonial-row text-white">
+            <div class="col-sm-12 col-md-4">
+                <p class="d-flex justify-content-center"><img class="testimonial-img" src="{% static 'images/man-1.jpg' %}" alt="man"></p>
+                <p class="d-flex justify-content-center"><em>Pablo, Barcelona</em></p>
+            </div>
+            <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                <h2 class="testimonial-text"> I spent one week in Co.Kerry. 
+                    It was amazing! Incredible experience, 
+                    hiking the Carrauntoohil with cool Rob, 
+                    going to Kerry Cliffs and ending days with some wine glue. </h2>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row py-3 testimonial-row text-white">
+            <div class="col-sm-12 col-md-4">
+                <p class="d-flex justify-content-center"><img class="testimonial-img" src="{% static 'images/women-2.jpg' %}" alt="woman"></p>
+                <p class="d-flex justify-content-center"><em>Jess, London</em></p>
+            </div>
+            <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                <h2 class="testimonial-text">What a wonderfull experience to move out of 
+                    crowded city and spend some days with this astonishing views!!!</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
 {% endblock %}

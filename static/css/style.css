@@ -4,21 +4,64 @@ body{
     flex-direction: column;
 }
 
-.polaroid-image {
-    transform: rotate(35deg);
-    width: 35%;
-    max-width: 150%;
+.row {
+    margin: 0;
 }
+
+/* Home */
+.main-image {
+    background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
+    height: 500px;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+.mask{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .main-text-bottom h5 {
     padding-top: 15%;
     padding-left: 5%;
 }
 
-.row {
-    margin: 0;
+/* Testimonials home */
+.testimonial-row {
+    background-color: #E9A178;
+    min-height: 350px;
+}
+
+.testimonial-text {
+    padding: 40px;
+    text-align: center;
+}
+
+.testimonial-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev {
+    padding-right: 11%;
+}
+
+.carousel-control-next {
+    padding-left: 11%;
+}
+
+/* Blog */
+.polaroid-image {
+    transform: rotate(35deg);
+    width: 35%;
+    max-width: 150%;
 }
 
 
+
+
+/* Footer */
 footer{
     margin-top: auto;
 }
