@@ -6,7 +6,9 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class PostModel(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
+    excerpt = models.TextField(blank=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

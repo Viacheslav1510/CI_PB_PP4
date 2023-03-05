@@ -4,6 +4,11 @@ body{
     flex-direction: column;
 }
 
+.polaroid-image {
+    transform: rotate(35deg);
+    width: 35%;
+    max-width: 150%;
+}
 .main-text-bottom h5 {
     padding-top: 15%;
     padding-left: 5%;
