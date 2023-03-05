@@ -24,9 +24,9 @@ def logout_confirm(request):
         if form.get('logout'):
             logout(request)
             messages.success(request, "You've been logged out")
-            return redirect('blog')
+            return redirect('home')
         else:
-            return render(request, 'accounts/login.html')
+            return render(request, 'home/index.html')
 
     return render(request, 'accounts/logout.html')
 

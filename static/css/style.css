@@ -4,8 +4,13 @@ body{
     flex-direction: column;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 .row {
     margin: 0;
+    padding: 0;
 }
 
 /* Home */
@@ -58,7 +63,14 @@ body{
     max-width: 150%;
 }
 
+.blogs-row {
+    background-color: #FFDEB4;
+}
 
+.blog-card {
+    min-height: 500px;
+    background-color: #A0D995;
+}
 
 
 /* Footer */
