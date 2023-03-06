@@ -15,7 +15,7 @@ class PostModel(models.Model):
         on_delete=models.CASCADE,
         related_name='blog_posts',
     )
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = models.ImageField(upload_to='blog_image', blank=True) #CloudinaryField('image', default='placeholder')
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:

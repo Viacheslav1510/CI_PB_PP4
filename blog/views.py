@@ -12,13 +12,13 @@ def blog_home(request):
 
 def create_blog(request):
     if request.method == "POST":
-        form = PostModelForm(request.POST)
+        form = PostModelForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
-            # 
-        else: 
+            return redirect('blog')
+        else:
             messages.errors(request, str(form.errors))
     else:
         form = PostModelForm()

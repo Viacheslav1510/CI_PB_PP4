@@ -6,10 +6,10 @@
 <div class="row">
     <div class="col-sm-12 col-md-8 ml-5">
         <div class="card rounded m-2 shadow-sm border-0">
-            <div class="card-body p-3 blog-card">
-                <form method="POST" action="{% url 'add-blog' %}">
+            <div class="card-body p-3 blog-card text-white">
+                <form method="POST" action="{% url 'add-blog' %}" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ form.as_p }}
                     <input type="submit" class="btn btn-success" value="Post">
                 </form>
             </div>
