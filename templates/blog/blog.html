@@ -13,7 +13,8 @@
         ">
         <div class="row py-4">
             <div class="col-sm-12 col-md-6">
-                <h3 class="text-white" style="background-color: rgba(0, 0, 0, 0.6);">Some text</h3>
+                <h3 class="text-white" style="background-color: rgba(0, 0, 0, 0.6);"></h3>
+                <a class="btn btn-outline-light btn-lg" href="{% url 'add-blog' %}" role="button">Add Blog</a>
             </div>
             <div class="col-sm-12 col-md-6">
                 <img src="{% static 'images/polaroid.png' %}" alt="polaroid" class="polaroid-image">
@@ -34,8 +35,8 @@
                     height: 250px; width: 90%;
                 ">
                     </a>
-                    <h5> <a href="{% url 'blog-detail' post.slug %}" class="text-dark">{{ post.title }}</a></h5>
-                    <p class="small text-muted font-italic">{{ post.excerpt }}</p>
+                    <h5> <a href="{% url 'blog-detail' post.slug %}" class="text-white">{{ post.title }}</a></h5>
+                    <p class="small text-white font-italic">{{ post.excerpt }}</p>
                 </div>
             </div>
         </div>

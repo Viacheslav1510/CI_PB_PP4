@@ -1,9 +1,21 @@
 from django.contrib import admin
-from .models import PostModel
+from .models import PostModel, Comment
+from django_summernote.admin import SummernoteModelAdmin
 
 
-class PostModelAdmin(admin.ModelAdmin):
+@admin.register(PostModel)
+class PostModelAdmin(SummernoteModelAdmin):
+    prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'date_created')
+    summernote_fields = ('content')
 
 
-admin.site.register(PostModel, PostModelAdmin)
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'body', 'date_created', 'approved')
+    list_filter = ('approved', 'date_created')
+    search_fields = ('user', 'body')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
