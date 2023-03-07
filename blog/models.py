@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.shortcuts import reverse
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
@@ -34,7 +35,10 @@ class PostModel(models.Model):
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
+    def get_absolute_url(self):     
+        return reverse('blog-detail', args=[str(self.slug)])
 
+    
 class Comment(models.Model):
     post = models.ForeignKey(
         PostModel,

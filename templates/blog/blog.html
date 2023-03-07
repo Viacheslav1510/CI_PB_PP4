@@ -35,7 +35,7 @@
                     height: 250px; width: 90%;
                 ">
                     </a>
-                    <h5> <a href="{% url 'blog-detail' post.slug %}" class="text-white">{{ post.title }}</a></h5>
+                    <h5> <a href="{{ post.get_absolute_url }}" class="text-white">{{ post.title }}</a></h5>
                     <p class="small text-white font-italic">{{ post.excerpt }}</p>
                 </div>
             </div>

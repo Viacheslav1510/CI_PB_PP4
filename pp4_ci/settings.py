@@ -53,8 +53,6 @@ INSTALLED_APPS = [
     'accounts'
 ]
 
-LOGIN_REDIRECT_URL = 'blog'
-
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert-info',
@@ -155,6 +153,8 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'accounts-login'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

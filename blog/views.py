@@ -3,7 +3,7 @@ from .models import PostModel
 from .forms import CommentForm, PostModelForm, PostUpdateForm
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
 
 def blog_home(request):
@@ -33,6 +33,7 @@ def blog_detail(request, slug):
     return render(request, "blog/blog-details.html", context)
 
 
+@login_required
 def create_post(request):
     if request.method == "POST":
         form = PostModelForm(request.POST, request.FILES)
@@ -49,8 +50,9 @@ def create_post(request):
     return render(request, 'blog/add-blog.html', context)
 
 
+@login_required
 def edit_post(request, slug):
-    post = get_object_or_404(PostModel, slug=slug)
+    post = get_object_or_404(PostModel, slug=slug, author=request.user)
     if request.method == 'POST':
         form = PostUpdateForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
@@ -65,8 +67,9 @@ def edit_post(request, slug):
     return render(request, 'blog/edit-blog.html', context)
 
 
+@login_required
 def delete_post(request, slug):
-    post = get_object_or_404(PostModel, slug=slug)
+    post = get_object_or_404(PostModel, slug=slug, author=request.user)
     if request.method == 'POST':
         post.delete()
         messages.info(request, "The post have been deleted")
