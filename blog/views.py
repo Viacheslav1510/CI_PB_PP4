@@ -41,8 +41,6 @@ def create_post(request):
             instance.author = request.user
             instance.save()
             return redirect('blog')
-        else:
-            messages.error(request, str(form.errors))
     else:
         form = PostModelForm()
     context = {
@@ -67,3 +65,13 @@ def edit_post(request, slug):
     return render(request, 'blog/edit-blog.html', context)
 
 
+def delete_post(request, slug):
+    post = get_object_or_404(PostModel, slug=slug)
+    if request.method == 'POST':
+        post.delete()
+        messages.info(request, "The post have been deleted")
+        return redirect('blog')
+    context = {
+        'post': post,
+    }
+    return render(request, 'blog/delete-blog.html', context)

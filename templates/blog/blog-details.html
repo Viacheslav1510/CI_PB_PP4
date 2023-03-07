@@ -20,7 +20,7 @@
                         <p class="text-muted">{{ post.author }} | {{ post.date_created }}</p>
                       </div>
                       <div class="col-6">
-                        <a href="" class="btn btn-danger btn-sm m-2 float-right">Delete</a>
+                        <a href="{% url 'blog-delete' post.slug %}" class="btn btn-danger btn-sm m-2 float-right">Delete</a>
                         <a href="{% url 'blog-edit' post.slug %}" class="btn btn-primary btn-sm m-2 float-right">  Edit  </a>
                       </div>
                     </div>
