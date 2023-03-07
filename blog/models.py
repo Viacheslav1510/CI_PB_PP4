@@ -8,14 +8,19 @@ from cloudinary.models import CloudinaryField
 class PostModel(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    content = models.TextField()
-    excerpt = models.TextField(blank=True)
+    content = models.TextField(blank=False)
+    excerpt = models.TextField(blank=False)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name='blog_posts',
     )
-    featured_image = models.ImageField(upload_to='blog_image', blank=True) #CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField(
+        'blog_image',
+        default='placeholder',
+        null=False,
+        blank=False
+    )  # models.ImageField(upload_to='blog_image', blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:

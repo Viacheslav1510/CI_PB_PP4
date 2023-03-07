@@ -5,17 +5,26 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="col-6 offset-3 py-3">
+        <div class="col-sm-8 col-md-6 offset-sm-2 col-md-3 py-3">
             <div class="card rounded m-2 shadow-sm border-0">
                 <div class="card-body p-4">
                     <a href="" class="text-decoration-none">
                         <img src="{{ post.featured_image.url }}" alt="featured_image"
                             class="img-fluid d-block mx-auto mb-3" style="
-                    height: 250px; width: 90%;
+                    height: 350px; width: 90%;
                 ">
                     </a>
                     <h5> <a href="#" class="text-dark">{{ post.title }}</a></h5>
-                    <p class=" text-muted">{{ post.author }} | {{ post.date_created }}</p>
+                    <div class="row">
+                      <div class="col-6">
+                        <p class="text-muted">{{ post.author }} | {{ post.date_created }}</p>
+                      </div>
+                      <div class="col-6">
+                        <a href="" class="btn btn-danger btn-sm m-2 float-right">Delete</a>
+                        <a href="{% url 'blog-edit' post.slug %}" class="btn btn-primary btn-sm m-2 float-right">  Edit  </a>
+                      </div>
+                    </div>
+                    
                     <p class="font-italic">{{ post.content | safe }}</p>
                 </div>
             </div>

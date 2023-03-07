@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import PostModel
-from .forms import CommentForm, PostModelForm
+from .forms import CommentForm, PostModelForm, PostUpdateForm
+from django.contrib import messages
 from django.shortcuts import get_object_or_404
 # Create your views here.
 
@@ -8,24 +9,6 @@ from django.shortcuts import get_object_or_404
 def blog_home(request):
     posts = PostModel.objects.all()
     return render(request, 'blog/blog.html', {'posts': posts})
-
-
-def create_blog(request):
-    if request.method == "POST":
-        form = PostModelForm(data=request.POST, files=request.FILES)
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.author = request.user
-            instance.save()
-            return redirect('blog')
-        else:
-            messages.errors(request, str(form.errors))
-    else:
-        form = PostModelForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'blog/add-blog.html', context)
 
 
 def blog_detail(request, slug):
@@ -48,3 +31,39 @@ def blog_detail(request, slug):
     }
 
     return render(request, "blog/blog-details.html", context)
+
+
+def create_post(request):
+    if request.method == "POST":
+        form = PostModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            return redirect('blog')
+        else:
+            messages.error(request, str(form.errors))
+    else:
+        form = PostModelForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'blog/add-blog.html', context)
+
+
+def edit_post(request, slug):
+    post = get_object_or_404(PostModel, slug=slug)
+    if request.method == 'POST':
+        form = PostUpdateForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('blog-detail', slug=post.slug)
+    else:
+        form = PostUpdateForm(instance=post)
+    context = {
+        'post': post,
+        'form': form
+    }
+    return render(request, 'blog/edit-blog.html', context)
+
+
