@@ -10,7 +10,7 @@ class PostModel(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField(blank=False)
-    excerpt = models.TextField(blank=False)
+    excerpt = models.TextField(max_length=200, blank=False)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -18,9 +18,9 @@ class PostModel(models.Model):
     )
     featured_image = CloudinaryField(
         'blog_image',
-        default='placeholder',
-        null=False,
-        blank=False
+        default=None,
+        null=True,
+        blank=True
     )  # models.ImageField(upload_to='blog_image', blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 

@@ -1,80 +1,183 @@
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Noto+Serif+Lao:wght@600&display=swap');
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'EB Garamond', serif;
+  font-size: 800;
+}
+
+h5 {
+  font-family: 'Noto Serif Lao', serif;
+  font-size: 600;
+}
 .container-fluid {
-    padding: 0;
+  padding: 0;
 }
 
 .row {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Home */
 .main-image {
-    background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
-    height: 500px;
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.mask{
-    background-color: rgba(0, 0, 0, 0.5);
+.mask {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main-text-bottom h5 {
-    padding-top: 15%;
-    padding-left: 5%;
+  padding-top: 15%;
+  padding-left: 5%;
 }
 
 /* Testimonials home */
 .testimonial-row {
-    background-color: #E9A178;
-    min-height: 350px;
+  background-color: #E9A178;
+  min-height: 350px;
 }
 
 .testimonial-text {
-    padding: 40px;
-    text-align: center;
+  padding: 40px;
+  text-align: center;
 }
 
 .testimonial-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
 .carousel-control-prev {
-    padding-right: 11%;
+  padding-right: 11%;
 }
 
 .carousel-control-next {
-    padding-left: 11%;
+  padding-left: 11%;
 }
 
 /* Blog */
+
 .polaroid-image {
-    transform: rotate(35deg);
-    width: 35%;
-    max-width: 150%;
+  transform: rotate(35deg);
+  width: 30%;
+  max-width: 150%;
 }
 
-.blogs-row {
-    background-color: #FFDEB4;
+.posts-row {
+  background-color: #781D42;
 }
 
-.blog-card {
-    min-height: 500px;
-    background-color: #2C3333;
-    
+.posts-card {
+  min-height: 500px;
+  max-height: 550px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
+.posts-img {
+  height: 250px;
+  width: 100%;
+}
+
+.posts-title {
+  transition: 1s;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.posts-title a {
+  font-size: 20px;
+  color: #774360;
+}
+
+.posts-card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 10px 15px rgba(235, 182, 5, 0.3);
+}
+
+.posts-card:before,
+.posts-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+
+.posts-card::before {
+  transform-origin: left top;
+}
+
+.posts-card::after {
+  transform-origin: right bottom;
+}
+
+.posts-card:hover::before,
+.posts-card:hover::after,
+.posts-card:focus::before,
+.posts-card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+
+.card-footer {
+  position: relative;
+  bottom: 0;
+}
+
+/* Forms container */
+.add-post-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678285809/2560x1600-850690-Black-Sea-coast-Bulgaria-Coast-Sunrises-and-sunsets_sxrswx.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.login-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.signup-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678291147/wallpaperflare.com_wallpaper_1_v2uqcw.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form-card {
+  background-color: #781D42;
+  box-shadow: 10px 10px 15px rgb(238, 129, 4);
+}
+
+.login-card {
+  background-color: #0A1931;
+  box-shadow: 10px 10px 15px rgb(238, 129, 4);
+}
 
 /* Footer */
-footer{
-    margin-top: auto;
+footer {
+  margin-top: auto;
 }

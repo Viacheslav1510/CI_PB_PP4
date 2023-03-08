@@ -13,42 +13,61 @@
         ">
         <div class="row py-4">
             <div class="col-sm-12 col-md-6">
-                <h3 class="text-white" style="background-color: rgba(0, 0, 0, 0.6);"></h3>
-                <a class="btn btn-outline-light btn-lg" href="{% url 'add-blog' %}" role="button">Add Blog</a>
+                <div class="blog-add-post py-5" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <h3 class="text-white p-3">Do you want to share your Kerry trip experience?</h3>
+                    <h5 class="text-white p-2">...make your own post.</h5>
+                    <a class="btn btn-outline-light btn-lg add-post-button" href="{% url 'add-blog' %}" role="button">Add Post</a>
+                </div>
+                
             </div>
             <div class="col-sm-12 col-md-6">
                 <img src="{% static 'images/polaroid.png' %}" alt="polaroid" class="polaroid-image">
             </div>
         </div>
-        
+
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row blogs-row">
+    <div class="row posts-row">
         {% for post in posts %}
-        <div class="col-sm-12 col-md-6 col-lg-4 py-1">
-            <div class="card rounded m-2 shadow-sm border-0">
-                <div class="card-body p-3 blog-card">
-                    <a href="{% url 'blog-detail' post.slug %}" class="text-decoration-none">
-                        <img src="{{ post.featured_image.url }}" alt="featured_image"
-                            class="img-fluid d-block mx-auto mb-3" style="
-                    height: 250px; width: 90%;
-                ">
-                    </a>
-                    <h5> <a href="{{ post.get_absolute_url }}" class="text-white">{{ post.title }}</a></h5>
-                    <p class="small text-white font-italic">{{ post.excerpt }}</p>
-                </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 py-1 mt-2">
+            <div class="card card-block posts-card">
+                <a href="{% url 'blog-detail' post.slug %}" class="text-decoration-none">
+                    <img src="{{ post.featured_image.url }}" alt="featured_image" class="posts-img">
+                    <h5 class="posts-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+                    <p class="small font-italic">{{ post.excerpt }}</p>
+                    <div class="card-footer text-muted text-center mt-auto">
+                        {{ post.date_created }}
+                    </div>
             </div>
         </div>
 
         {% if forloop.counter|divisibleby:3 %}
     </div>
-    <div class="row">
+    <div class="row posts-row">
         {% endif %}
         {% endfor %}
     </div>
-
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
+
+
 
 
 {% endblock %}

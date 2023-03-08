@@ -3,20 +3,22 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="row">
-    <div class="col-md-5 offset-md-3">
-        <div class="card rounded m-2 shadow-sm border-0">
-            <div class="card-body p-4">
-                <h4 class="text-center">Sign Up</h4>
-                <hr style="border-top: dotted 4px;
-                           width: 60%;
-                           color: darkgray; 
-                ">
-                <form method="POST" class="text-center">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <input class="btn btn-secondary btn-block" type="submit" value="Sign Up">
-                </form>
+<div class="container-fluid signup-container">
+    <div class="row">
+        <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+            <div class="card m-5 border-0">
+                <div class="card-body rounded text-white p-4 login-card">
+                    <h4 class="text-center">Sign Up</h4>
+                    <hr style="border-top: dotted 4px;
+                            width: 60%;
+                            color: rgb(238, 129, 4);
+                    ">
+                    <form method="POST" class="text-center">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-secondary btn-block" type="submit" value="Sign Up">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
