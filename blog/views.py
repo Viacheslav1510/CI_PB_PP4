@@ -21,23 +21,9 @@ def blog_home(request):
 
 def blog_detail(request, slug):
     post = get_object_or_404(PostModel, slug=slug)
-    comments = post.comments.filter(approved=True)
-    new_comment = None
-    comment_form = CommentForm(data=request.POST)
-    if request.method == 'POST':
-        if comment_form.is_valid():
-            new_comment = comment_form.save(commit=False)
-            new_comment.post = post
-            new_comment.save()
-        else:
-            comment_form = CommentForm()
-
     context = {
         'post': post,
-        'new_comment': new_comment,
-        'comment_form': comment_form,
     }
-
     return render(request, "blog/blog-details.html", context)
 
 

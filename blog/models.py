@@ -37,16 +37,15 @@ class PostModel(models.Model):
 
     def get_absolute_url(self):     
         return reverse('blog-detail', args=[str(self.slug)])
-
     
+    def comment_count(self):
+        return self.comment_set.all().count()
+
+
 class Comment(models.Model):
-    post = models.ForeignKey(
-        PostModel,
-        on_delete=models.CASCADE,
-        related_name='comments'
-    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = models.TextField()
+    post = models.ForeignKey(PostModel, on_delete=models.CASCADE)
+    body = models.CharField(max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

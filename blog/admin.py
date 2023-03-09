@@ -12,9 +12,9 @@ class PostModelAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'body', 'date_created', 'approved')
+    list_display = ('user', 'post', 'body', 'date_created', 'approved')
     list_filter = ('approved', 'date_created')
-    search_fields = ('user', 'body')
+    search_fields = ('user', 'body', 'post')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
