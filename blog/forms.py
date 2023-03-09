@@ -20,6 +20,10 @@ class PostUpdateForm(forms.ModelForm):
     class Meta:
         model = PostModel
         fields = ('title', 'excerpt', 'content', 'featured_image')
+        widgets = {
+            'excerpt': forms.Textarea(attrs={'rows': 4}),
+            'content': forms.Textarea(attrs={'rows': 7}),
+            }
 
 
 class CommentForm(forms.ModelForm):

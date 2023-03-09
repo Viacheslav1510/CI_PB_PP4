@@ -143,8 +143,23 @@ h5 {
 }
 
 /* Forms container */
+.blog-details-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678372567/blog-detail_pceppf.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .add-post-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678285809/2560x1600-850690-Black-Sea-coast-Bulgaria-Coast-Sunrises-and-sunsets_sxrswx.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.edit-post-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678369895/edit_l8sjls.jpg');
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -165,6 +180,10 @@ h5 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.details-post-card {
+  background-color: #0A1931;
 }
 
 .form-card {
