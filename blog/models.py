@@ -29,21 +29,28 @@ class PostModel(models.Model):
 
     def __str__(self):
         return self.title
-    
+  
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
-    def get_absolute_url(self):     
+    def get_absolute_url(self):  
         return reverse('blog-detail', args=[str(self.slug)])
-    
+   
     def comment_count(self):
-        return self.comment_set.all().count()
+        return self.comment_set.filter(approved=True).count()
+    
+    def comments(self):
+        return self.comment_set.filter(approved=True)
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
     post = models.ForeignKey(PostModel, on_delete=models.CASCADE)
     body = models.CharField(max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)

@@ -21,8 +21,21 @@ def blog_home(request):
 
 def blog_detail(request, slug):
     post = get_object_or_404(PostModel, slug=slug)
+    comments = post.comments
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.post = post
+            form.save()
+            return redirect('blog-detail', slug=post.slug)
+    else:
+        form = CommentForm()
     context = {
         'post': post,
+        'form': form,
+        'comments': comments
     }
     return render(request, "blog/blog-details.html", context)
 

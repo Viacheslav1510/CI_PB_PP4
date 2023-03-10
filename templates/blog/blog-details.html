@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="container-fluid blog-details-container">
@@ -19,7 +20,7 @@
                       </div>
                       <div class="col-6">
                         {% if post.author == request.user %}
-                        <a href="{% url 'blog-delete' post.slug %}" class="btn btn-dark btn-sm m-2 float-right ">Delete</a>
+                        <a href="{% url 'blog-delete' post.slug %}" class="btn btn-dark btn-sm m-2 float-right delete-btn">Delete</a>
                         <a href="{% url 'blog-edit' post.slug %}" class="btn btn-dark btn-sm m-2 float-right edit-btn">  Edit  </a>
                         {% endif %}
                       </div>
@@ -27,6 +28,13 @@
                     <p class="font-italic">{{ post.content | safe }}</p>
                 </div>
                 <!-- Comments -->
+                
+                <form method="POST" class="text-white p-3">
+                  <p class="text-white ml-2">You can leave comment to this post:</p>
+                  {% csrf_token %}
+                  {{ form|crispy }}
+                  <input type="submit" class="btn btn-success btn-sm" value="Comment">
+                </form>
                 <p>
                   <a data-toggle="collapse" href="#collapseComments" role="button" 
                   aria-expanded="false" aria-controls="collapseComments" class="btn btn-dark btn-sm ml-2 mr-2">
@@ -36,7 +44,7 @@
                 </p>
                 <div class="collapse" id="collapseComments">
                   <div class="card card-body comments-card">
-                    {% for comment in post.comment_set.all %}
+                    {% for comment in comments %}
                     <p class="comment-username">{{ comment.user }}<span class="text-muted"> , {{ comment.date_created }}</span></p>
                     <hr class="comment-username-hr">
                     <p class="text-black">

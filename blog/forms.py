@@ -27,6 +27,14 @@ class PostUpdateForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    body = forms.CharField(
+        label='',
+        widget=forms.Textarea(attrs={
+            'placeholder': 'Add comment here...',
+            'rows': 2,
+        }) 
+    )
+
     class Meta:
         model = Comment
         fields = ('body',)
