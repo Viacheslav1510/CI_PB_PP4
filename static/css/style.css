@@ -79,7 +79,7 @@ h5 {
   max-width: 150%;
 }
 
-.posts-row {
+.posts-row, .pagination-row {
   background-color: #6E7582;
 }
 

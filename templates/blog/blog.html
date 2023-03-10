@@ -16,9 +16,10 @@
                 <div class="blog-add-post py-5" style="background-color: rgba(0, 0, 0, 0.6);">
                     <h3 class="text-white p-3">Do you want to share your Kerry trip experience?</h3>
                     <h5 class="text-white p-2">...make your own post.</h5>
-                    <a class="btn btn-outline-light btn-lg add-post-button" href="{% url 'add-blog' %}" role="button">Add Post</a>
+                    <a class="btn btn-outline-light btn-lg add-post-button" href="{% url 'add-blog' %}"
+                        role="button">Add Post</a>
                 </div>
-                
+
             </div>
             <div class="col-sm-12 col-md-6">
                 <img src="{% static 'images/polaroid.png' %}" alt="polaroid" class="polaroid-image">
@@ -27,9 +28,10 @@
 
     </div>
 </div>
+
 <div class="container-fluid">
     <div class="row posts-row">
-        {% for post in posts %}
+        {% for post in page_obj %}
         <div class="col-sm-12 col-md-6 col-lg-4 py-1 mt-2">
             <div class="card card-block posts-card">
                 <a href="{% url 'blog-detail' post.slug %}" class="text-decoration-none">
@@ -42,29 +44,37 @@
             </div>
         </div>
 
-        {% if forloop.counter|divisibleby:3 %}
-    </div>
-    <div class="row posts-row">
-        {% endif %}
         {% endfor %}
     </div>
-    <div class="pagination">
-        <span class="step-links">
+    <!-- pagination -->
+    <div class="row d-flex justify-content-center text-center pagination-row">
+        {% if page_obj.has_other_pages %}
+        <div class="btn-group p-2" role="group" aria-label="Item pagination">
             {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-dark btn-sm">&laquo;</a>
             {% endif %}
-    
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-    
+
+            {% for page_number in page_obj.paginator.page_range %}
+            {% if page_obj.number == page_number %}
+            <button class="btn btn-outline-dark btn-sm active">
+                <span>{{ page_number }} <span class="sr-only">(current)</span></span>
+            </button>
+            {% else %}
+            <a href="?page={{ page_number }}" class="btn btn-outline-dark btn-sm">
+                {{ page_number }}
+            </a>
+            {% endif %}
+            {% endfor %}
+
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-dark btn-sm">&raquo;</a>
             {% endif %}
-        </span>
+        </div>
+        {% else %}
+        <p>No items found.</p>
+        {% endif %}
     </div>
+
 </div>
 
 
