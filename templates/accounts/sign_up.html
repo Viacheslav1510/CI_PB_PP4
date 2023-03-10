@@ -8,11 +8,8 @@
         <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
             <div class="card m-5 border-0">
                 <div class="card-body rounded text-white p-4 login-card">
-                    <h4 class="text-center">Sign Up</h4>
-                    <hr style="border-top: dotted 4px;
-                            width: 60%;
-                            color: rgb(238, 129, 4);
-                    ">
+                    <h4 class="text-center mb-3">Sign Up</h4>
+
                     <form method="POST" class="text-center">
                         {% csrf_token %}
                         {{ form|crispy }}

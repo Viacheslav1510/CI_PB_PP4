@@ -182,7 +182,7 @@ h5 {
 
 .add-post-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678285809/2560x1600-850690-Black-Sea-coast-Bulgaria-Coast-Sunrises-and-sunsets_sxrswx.jpg');
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -190,7 +190,7 @@ h5 {
 
 .edit-post-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678369895/edit_l8sjls.jpg');
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -198,7 +198,7 @@ h5 {
 
 .login-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -206,7 +206,7 @@ h5 {
 
 .signup-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678291147/wallpaperflare.com_wallpaper_1_v2uqcw.jpg');
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
