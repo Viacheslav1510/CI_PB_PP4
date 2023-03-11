@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'blog',
-    'accounts'
+    'accounts',
+    'booking',
 ]
 
 MESSAGE_TAGS = {

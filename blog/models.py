@@ -29,7 +29,7 @@ class PostModel(models.Model):
 
     def __str__(self):
         return self.title
-  
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -37,10 +37,10 @@ class PostModel(models.Model):
 
     def get_absolute_url(self):  
         return reverse('blog-detail', args=[str(self.slug)])
-   
+
     def comment_count(self):
         return self.comment_set.filter(approved=True).count()
-    
+
     def comments(self):
         return self.comment_set.filter(approved=True)
 

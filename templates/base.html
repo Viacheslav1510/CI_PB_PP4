@@ -32,7 +32,7 @@
           <a class="nav-link" href="{% url 'blog' %}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Booking</a>
+          <a class="nav-link" href="{% url 'tours' %}">Booking</a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item {% active_link 'logged-out' 'active' %}">
