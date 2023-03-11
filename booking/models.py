@@ -5,15 +5,9 @@ from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
 
 
-TOUR_CHOICES = (
-    ("Dingle Trip", "Dingle Trip"),
-    ("Ring Of Kerry", "Ring Of Kerry"),
-    ("The Skellig Ring", "The Skellig Ring"),
-    )
-
-
 class Tour(models.Model):
     tour_name = models.CharField(max_length=150, unique=True)
+    description = models.TextField(max_length=250, default='kerry tour')
     price = models.DecimalField(max_digits=5, decimal_places=2)
     max_seats = models.IntegerField(default=50)
     tour_image = CloudinaryField(
@@ -28,12 +22,19 @@ class Tour(models.Model):
 
 
 TIME_CHOICES = (
-    ("8 PM", "8 PM"),
-    ("10 PM", "10 PM"),
+    ("8 AM", "8 AM"),
+    ("10 AM", "10 AM"),
     ("12 PM", "12 PM"),
     ("14 PM", "14 PM"),
-    ("16 PM", "16 PM"),
 )
+
+SEAT_CHOCES = (
+    (1, "One Seat"),
+    (2, "Two seats"),
+    (3, "Three seats"),
+    (4, "Four seats"),
+    (5, "Four seats"),
+    )
 
 
 class Booking(models.Model):
@@ -59,7 +60,11 @@ class Booking(models.Model):
         default="8 PM"
     )
     tour_date = models.DateField()
-    number_of_seats = models.IntegerField()
+    number_of_seats = models.CharField(
+        max_length=10,
+        choices=SEAT_CHOCES,
+        default=1
+    )
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
