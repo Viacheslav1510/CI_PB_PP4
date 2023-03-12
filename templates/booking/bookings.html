@@ -9,6 +9,12 @@
     <div class="col-md-5 offset-md-3">
         <div class="card rounded m-2 shadow-sm border-0">
             <div class="card-body p-4">
+                <div class="col-6">
+
+                    <a href="#" class="btn btn-dark btn-sm m-2 float-right delete-btn">Delete</a>
+                    <a href="{% url 'edit-booking' booking.id %}" class="btn btn-dark btn-sm m-2 float-right edit-btn">  Edit  </a>
+
+                  </div>
                 <h5 class="posts-title">{{ booking.tour }}</h5>
                 <p>{{ booking.tour_date }}</p>
                 <p>{{ booking.time }}</p>
@@ -16,6 +22,7 @@
                 <div class="card-footer text-muted text-center mt-auto">
                     Price: €{{ booking.tour.price }}
                 </div>
+                
             </div>
 
         </div>

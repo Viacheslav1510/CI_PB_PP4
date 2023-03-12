@@ -3,10 +3,9 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Tour, Booking
-from .forms import BookingForm
+from .forms import BookingForm, EditBookingForm
 
 
-@login_required()
 def tours_home(request):
     tours = Tour.objects.all()
     if request.method == 'POST':
@@ -31,9 +30,23 @@ def tours_home(request):
 @login_required()
 def user_bookings(request):
     bookings = Booking.objects.filter(user=request.user)
-    # tour = bookings.tour
     context = {
         'bookings': bookings,
-        # 'tour': tour
     }
     return render(request, 'booking/bookings.html', context)
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        form = EditBookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('bookings')
+    else:
+        form = EditBookingForm(instance=booking)
+    context = {
+        'post': booking,
+        'form': form
+    }
+    return render(request, 'booking/edit-booking.html', context)

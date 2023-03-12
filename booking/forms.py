@@ -20,7 +20,7 @@ class BookingForm(forms.ModelForm):
             datetime.date.today() + datetime.timedelta(days=30)
         )],
         widget=DateInput(attrs={
-            'type': 'date', 
+            'type': 'date',
             'max': datetime.date.today() + datetime.timedelta(days=30)}
             )
         )
@@ -29,4 +29,21 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('name', 'phone',
                   'email', 'tour', 'tour_date', 'time', 'number_of_seats')
+        widgets = {'date': DateInput()}
+
+
+class EditBookingForm(forms.ModelForm):
+    tour_date = forms.DateField(
+        validators=[MaxValueValidator(
+            datetime.date.today() + datetime.timedelta(days=30)
+        )],
+        widget=DateInput(attrs={
+            'type': 'date',
+            'max': datetime.date.today() + datetime.timedelta(days=30)}
+            )
+        )
+
+    class Meta:
+        model = Booking
+        fields = ('phone', 'tour', 'tour_date', 'time', 'number_of_seats')
         widgets = {'date': DateInput()}
