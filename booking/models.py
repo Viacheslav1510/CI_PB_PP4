@@ -28,12 +28,12 @@ TIME_CHOICES = (
     ("14 PM", "14 PM"),
 )
 
-SEAT_CHOCES = (
-    (1, "One Seat"),
-    (2, "Two seats"),
-    (3, "Three seats"),
-    (4, "Four seats"),
-    (5, "Four seats"),
+SEAT_CHOICES = (
+    ('1', "One Seat"),
+    ('2', "Two seats"),
+    ('3', "Three seats"),
+    ('4', "Four seats"),
+    ('5', "Four seats"),
     )
 
 
@@ -62,7 +62,7 @@ class Booking(models.Model):
     tour_date = models.DateField()
     number_of_seats = models.CharField(
         max_length=10,
-        choices=SEAT_CHOCES,
+        choices=SEAT_CHOICES,
         default=1
     )
     created_date = models.DateTimeField(auto_now_add=True)
