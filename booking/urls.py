@@ -10,4 +10,9 @@ urlpatterns = [
         views.edit_booking,
         name='edit-booking'
     ),
+    path(
+        'delete-booking/<int:booking_id>/',
+        views.delete_booking,
+        name='delete-booking'
+    ),
 ]
