@@ -22,7 +22,7 @@ class BookingForm(forms.ModelForm):
         widget=DateInput(attrs={
             'type': 'date',
             'max': datetime.date.today() + datetime.timedelta(days=30),
-            'min': datetime.date.today()
+            'min': datetime.date.today() + datetime.timedelta(days=1)
             })
         )
 

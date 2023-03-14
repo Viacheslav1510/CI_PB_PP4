@@ -13,12 +13,12 @@ def blog_home(request):
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     context = {
-        # 'posts': posts,
         'page_obj': page_obj
     }
     return render(request, 'blog/blog.html', context)
 
 
+@login_required
 def blog_detail(request, slug):
     post = get_object_or_404(PostModel, slug=slug)
     comments = post.comments
@@ -29,6 +29,7 @@ def blog_detail(request, slug):
             instance.user = request.user
             instance.post = post
             form.save()
+            messages.info(request, "You've left comment successfully")
             return redirect('blog-detail', slug=post.slug)
     else:
         form = CommentForm()
@@ -48,6 +49,7 @@ def create_post(request):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
+            messages.info(request, "The post have been created")
             return redirect('blog')
     else:
         form = PostModelForm()
@@ -64,6 +66,7 @@ def edit_post(request, slug):
         form = PostUpdateForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
+            messages.info(request, "The post have been updated")
             return redirect('blog-detail', slug=post.slug)
     else:
         form = PostUpdateForm(instance=post)

@@ -26,6 +26,7 @@ def booking(request, tour_id):
                 booking.user = request.user
                 booking.tour = tour
                 booking.save()
+                messages.info(request, "You've booked a trip successfully")
                 return redirect('bookings')
             else:
                 messages.info(request, "The Selected Day Is Full!")
