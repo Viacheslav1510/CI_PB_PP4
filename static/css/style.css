@@ -118,10 +118,6 @@ h5 {
   right: 0;
   bottom: 0;
   left: 0;
-  transform: scale3d(0, 0, 1);
-  transition: transform .3s ease-out 0s;
-  background: rgba(255, 255, 255, 0.1);
-  content: '';
   pointer-events: none;
 }
 
@@ -196,6 +192,10 @@ h5 {
   background-position: center center;
 }
 
+.tours-main-container {
+  background-color: #6E7582;
+  min-height: 100vh;
+}
 .login-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
   min-height: 100vh;
