@@ -167,7 +167,7 @@ h5 {
   margin: 0px 2px;
 }
 
-/* Forms container */
+/* Forms containers */
 .blog-details-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678394196/IMG-1497_wnwwzz.jpg');
   min-height: 100vh;
@@ -196,6 +196,20 @@ h5 {
   background-color: #6E7582;
   min-height: 100vh;
 }
+
+.book-a-trip-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678805211/653720_oozhtb.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bookings-container {
+  background-color: #6E7582;
+  min-height: 100vh;
+}
+
 .login-container {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
   min-height: 100vh;
@@ -224,6 +238,12 @@ h5 {
 .login-card {
   background-color: #0A1931;
   box-shadow: 10px 10px 15px rgb(238, 129, 4);
+}
+
+/* Booking pages */
+.book-trip-text {
+  color: #781D42;
+  font-weight: bold;
 }
 
 /* Footer */
