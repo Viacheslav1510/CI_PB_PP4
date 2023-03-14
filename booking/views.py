@@ -8,23 +8,34 @@ from .forms import BookingForm, EditBookingForm
 
 def tours_home(request):
     tours = Tour.objects.all()
+    context = {
+        'tours': tours,
+    }
+    return render(request, 'booking/tours.html', context)
+
+
+@login_required()
+def booking(request, tour_id):
+    tour = get_object_or_404(Tour, id=tour_id)  
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking_form = form.save(commit=False)
-            booking_form.user = request.user
-            booking_form.save()
-            return redirect('home')
-        else:
-            messages.error(request, "Please enter correct data")
-            return render(request, 'booking/tours.html', {'form': form})
+            date = form.cleaned_data['tour_date']
+            if len(Booking.objects.filter(tour_date=date)) < tour.max_seats:
+                booking = form.save(commit=False)
+                booking.user = request.user
+                booking.tour = tour
+                booking.save()
+                return redirect('bookings')
+            else:
+                messages.info(request, "The Selected Day Is Full!")
     else:
         form = BookingForm()
     context = {
-        'tours': tours,
-        'form': form
+        'form': form,
+        'tour': tour
     }
-    return render(request, 'booking/tours.html', context)
+    return render(request, 'booking/book-a-trip.html', context)
 
 
 @login_required()
@@ -41,8 +52,14 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = EditBookingForm(request.POST, instance=booking)
         if form.is_valid():
-            form.save()
-            return redirect('bookings')
+            date = form.cleaned_data['tour_date']
+            if len(Booking.objects.filter(tour_date=date)) < \
+                    booking.tour.max_seats:
+                form.save()
+                messages.info(request, "The booking have been updated")
+                return redirect('bookings')
+            else:
+                messages.info(request, "The Selected Day Is Full!")
     else:
         form = EditBookingForm(instance=booking)
     context = {

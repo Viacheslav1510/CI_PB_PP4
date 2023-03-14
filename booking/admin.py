@@ -10,4 +10,4 @@ class TourModelAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingModelAdmin(admin.ModelAdmin):
-    list_display = ('tour', 'name', 'tour_date', 'time', 'created_date')
+    list_display = ('tour', 'name', 'tour_date', 'created_date')

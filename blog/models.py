@@ -57,7 +57,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ('date_created',)
+        ordering = ('-date_created',)
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.user.username)

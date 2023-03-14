@@ -28,7 +28,7 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ('name', 'phone',
-                  'email', 'tour', 'tour_date', 'time', 'number_of_seats')
+                  'email', 'tour_date')
         widgets = {'date': DateInput()}
 
 
@@ -45,5 +45,5 @@ class EditBookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ('phone', 'tour', 'tour_date', 'time', 'number_of_seats')
+        fields = ('phone', 'tour', 'tour_date')
         widgets = {'date': DateInput()}

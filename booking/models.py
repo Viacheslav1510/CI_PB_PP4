@@ -7,9 +7,9 @@ from cloudinary.models import CloudinaryField
 
 class Tour(models.Model):
     tour_name = models.CharField(max_length=150, unique=True)
-    description = models.TextField(max_length=250, default='kerry tour')
+    description = models.TextField(max_length=500, default='kerry tour')
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    max_seats = models.IntegerField(default=50)
+    max_seats = models.IntegerField(default=15)
     tour_image = CloudinaryField(
         'tour_image',
         default=None,
@@ -19,22 +19,6 @@ class Tour(models.Model):
 
     def __str__(self):
         return f"{self.tour_name}"
-
-
-TIME_CHOICES = (
-    ("8 AM", "8 AM"),
-    ("10 AM", "10 AM"),
-    ("12 PM", "12 PM"),
-    ("14 PM", "14 PM"),
-)
-
-SEAT_CHOICES = (
-    ('1', "One Seat"),
-    ('2', "Two seats"),
-    ('3', "Three seats"),
-    ('4', "Four seats"),
-    ('5', "Four seats"),
-    )
 
 
 class Booking(models.Model):
@@ -54,17 +38,7 @@ class Booking(models.Model):
         null=True,
         blank=True
     )
-    time = models.CharField(
-        max_length=10,
-        choices=TIME_CHOICES,
-        default="8 PM"
-    )
     tour_date = models.DateField()
-    number_of_seats = models.CharField(
-        max_length=10,
-        choices=SEAT_CHOICES,
-        default=1
-    )
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
@@ -73,6 +47,4 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Tour: {self.tour}, name: {self.name}," \
-                f"date: {self.tour_date}, time: {self.time}"
-
-    
+                f"date: {self.tour_date}"
