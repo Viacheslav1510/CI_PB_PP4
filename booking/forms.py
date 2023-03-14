@@ -21,8 +21,9 @@ class BookingForm(forms.ModelForm):
         )],
         widget=DateInput(attrs={
             'type': 'date',
-            'max': datetime.date.today() + datetime.timedelta(days=30)}
-            )
+            'max': datetime.date.today() + datetime.timedelta(days=30),
+            'min': datetime.date.today()
+            })
         )
 
     class Meta:
@@ -39,8 +40,9 @@ class EditBookingForm(forms.ModelForm):
         )],
         widget=DateInput(attrs={
             'type': 'date',
-            'max': datetime.date.today() + datetime.timedelta(days=30)}
-            )
+            'max': datetime.date.today() + datetime.timedelta(days=30),
+            'min': datetime.date.today() + datetime.timedelta(days=1)
+            })
         )
 
     class Meta:
