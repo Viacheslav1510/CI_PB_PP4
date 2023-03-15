@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+            <div class="card m-5 border-0">
+                <div class="card-body rounded text-white p-4 login-card">
+                    <h4 class="text-center mb-3">Contact Us</h4>
+                    <form method="POST" class="text-center">
+                        {% csrf_token %}
+                        {{ contact_form|crispy }}
+                        <input class="btn btn-dark btn-block" type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

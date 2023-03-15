@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'daterangefilter',
     'django_summernote',
     'active_link',
     'cloudinary',
