@@ -3,20 +3,18 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="row">
-    <div class="col-md-5 offset-md-3">
+<div class="row confirmation-contaner">
+    <div class="col-md-4 offset-md-4 mt-5">
         <div class="card rounded m-2 shadow-sm border-0">
-            <div class="card-body p-4">
-                <div class="alert alert-warning">
+            <div class="card-body rounded p-4 confirmation-card">
+                <div class="alert alert-warning text-center p-4">
                    Are you sure you want to log out?
                 </div>
                 <form action="{% url 'logout-confirmation' %}" method="POST" name="confirm" class="mt-5">
                     {% csrf_token %}
                     <div class="d-flex flex-row justify-content-between logout-buttons">
-                        <input type="submit" class="btn btn-dark" value="Go Back" name="go_back">
+                        <a href="{% url 'home' %}" class="btn btn-dark">Go home</a>
                         <input type="submit" class="btn btn-danger" value="Logout" name="logout">
-                        <!-- <a class="btn btn-dark" href="{% url 'blog' %}" role="button">Go Back</a>
-                        <a class="btn btn-success" href="{% url 'accounts-login' %}" role="button">Login</a> -->
                     </div>
                 </form>
             </div>

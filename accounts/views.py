@@ -43,8 +43,6 @@ def logout_confirm(request):
             logout(request)
             messages.success(request, "You've been logged out")
             return redirect('home')
-        else:
-            return render(request, 'home/index.html')
 
     return render(request, 'accounts/logout.html')
 

@@ -33,7 +33,13 @@
     </div>
     {% endfor %}
     {% else %}
-    <h3 class="text-white text-center">{{user.username}}, you haven't booked your trip yet</h3>
+    <div class="container-fluid bookings-container text-white">
+        <div class="text-center ">
+            <h3 class="text-white m-5">{{user.username}}, you haven't booked your trip yet</h3>
+            <a href="{% url 'tours' %}"
+                            class="btn btn-dark btn-lg m-2">Select a tour</a>
+        </div>
+    
     {% endif %}
 
 
