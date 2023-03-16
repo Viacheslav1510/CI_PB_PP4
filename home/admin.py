@@ -15,6 +15,7 @@ class ContactModelAdmin(admin.ModelAdmin):
         'user',
         'first_name',
         'last_name',
+        'email',
         'message',
         'created_date')
 
