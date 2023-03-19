@@ -15,3 +15,17 @@ class TestPostModelForm(TestCase):
         self.assertEqual(
             form.Meta.fields,
             ('title', 'excerpt', 'content', 'featured_image'))
+
+
+class TestPostUpdateForm(TestCase):
+
+    def test_update_image_is_required(self):
+        form = PostUpdateForm({'featured_image': ''})
+        self.assertFalse(form.is_valid())
+
+
+class TestCommentForm(TestCase):
+
+    def test_body_field_is_required(self):
+        form = CommentForm({'body': ''})
+        self.assertFalse(form.is_valid())

@@ -52,7 +52,7 @@ class Comment(models.Model):
         related_name='comments'
     )
     post = models.ForeignKey(PostModel, on_delete=models.CASCADE)
-    body = models.CharField(max_length=200)
+    body = models.CharField(blank=False, max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

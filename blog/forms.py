@@ -25,6 +25,10 @@ class PostUpdateForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'rows': 7}),
             }
 
+    def __init__(self, *args, **kwargs):
+        super(PostUpdateForm, self).__init__(*args, **kwargs)
+        self.fields['featured_image'].required = True
+
 
 class CommentForm(forms.ModelForm):
     body = forms.CharField(
