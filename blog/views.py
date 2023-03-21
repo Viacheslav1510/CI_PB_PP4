@@ -19,7 +19,7 @@ def blog_home(request):
 
 
 @login_required
-def blog_detail(request, slug):
+def post_details(request, slug):
     post = get_object_or_404(PostModel, slug=slug)
     comments = post.comments
     if request.method == 'POST':

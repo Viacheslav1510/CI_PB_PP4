@@ -18,10 +18,10 @@ class PostModel(models.Model):
     )
     featured_image = CloudinaryField(
         'blog_image',
-        default=None,
         null=True,
-        blank=True
-    )  # models.ImageField(upload_to='blog_image', blank=True)
+        blank=True,
+        default='/images/man-1.jpg'
+    )  
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -35,7 +35,7 @@ class PostModel(models.Model):
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
-    def get_absolute_url(self):  
+    def get_absolute_url(self):
         return reverse('blog-detail', args=[str(self.slug)])
 
     def comment_count(self):
