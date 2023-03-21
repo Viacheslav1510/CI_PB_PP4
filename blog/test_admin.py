@@ -1,13 +1,13 @@
 from django.test import TestCase
-from .models import PostModel, Comment
+from .models import Comment, PostModel
+from .admin import CommentAdmin
+from django.contrib.admin.sites import AdminSite
 from django.contrib.auth.models import User
 
 
-class TestModels(TestCase):
+class Test_Admin_Comment_Model(TestCase):
+
     def setUp(self):
-        """
-        SetUp function to create user, login and create post
-        """
         self.user = User.objects.create_user(
                 username='albajessica', email='foo@gmail.com',
                 password='bartolito')
@@ -24,20 +24,11 @@ class TestModels(TestCase):
             body='Test comment body'
         )
         self.comment.save()
+        self.site = AdminSite()
+        self.commentModelAdmin = CommentAdmin(Comment,  self.site)
 
-    def test_post_string_method_returns_title(self):
-        """
-        Test to check string method for Post Model
-        """
-        post = self.post
-        self.assertEqual(str(post), 'this is a test blog')
-
-    def test_comment_string_method_returns_right_string(self):
-        """
-        Test to check string method for Comment model
-        """
+    def test_admin_can_approve_comments(self):
         comment = self.comment
-        self.assertEqual(
-            str(comment),
-            f'Comment {comment.body} by {self.user.username}'
-        )
+        queryset = Comment.objects.filter(body='Test comment body')
+        self.commentModelAdmin.approve_comments(comment, queryset)
+        self.assertTrue(Comment.objects.get(body='Test comment body').approved)

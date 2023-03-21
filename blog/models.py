@@ -21,7 +21,7 @@ class PostModel(models.Model):
         null=True,
         blank=True,
         default='/images/man-1.jpg'
-    )  
+    )
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -60,4 +60,4 @@ class Comment(models.Model):
         ordering = ('-date_created',)
 
     def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.user.username)
+        return f'Comment {self.body} by {self.user.username}'
