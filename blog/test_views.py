@@ -13,7 +13,7 @@ class TestBlogViews(TestCase):
     """
     def setUp(self):
         """
-        SetUp function to create user, login and create post 
+        SetUp function to create user, login and create post
         """
         self.user = User.objects.create_user(
             username='albajessica', email='foo@gmail.com',
@@ -29,28 +29,43 @@ class TestBlogViews(TestCase):
         self.post.save()
 
     def test_get_blog_home_page(self):
+        """
+        Test to get blog home page
+        """
         response = self.client.get('/blog/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/blog.html')
 
     def test_post_detail_page(self):
+        """
+        Test to get post details page
+        """
         slug = self.post.slug
         response = self.client.get(reverse('blog-detail', args=[slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/blog-details.html')
 
     def test_get_create_post_page(self):
+        """
+        Test to get create post page
+        """
         response = self.client.get('/new-post/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/add-blog.html')
 
     def test_get_post_edit_page(self):
+        """
+        Test to get edit post page
+        """
         slug = self.post.slug
         response = self.client.get(reverse('blog-edit', args=[slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/edit-blog.html')
 
     def test_get_post_delete_page(self):
+        """
+        Test to get delete confirmation page
+        """
         slug = self.post.slug
         response = self.client.get(reverse('blog-delete', args=[slug]))
         self.assertEqual(response.status_code, 200)
@@ -115,3 +130,14 @@ class TestBlogViews(TestCase):
         response = self.client.post(reverse('blog-delete',
                                     args=[slug]))
         self.assertRedirects(response, reverse('blog'), status_code=302)
+
+    def test_can_comment(self):
+        """
+        Test for comment functionality
+        """
+        slug = self.post.slug
+        response = self.client.post(
+            reverse('blog-detail', args=[slug]), {
+                'body': 'test comment'
+            })
+        self.assertEquals(response.status_code, 302)
