@@ -4,6 +4,9 @@ from .models import ContactModel
 
 
 class TestContactModel(TestCase):
+    """
+    A class to test Contact model
+    """
     def setUp(self):
         """
         SetUp function to create user, login and create post
@@ -22,6 +25,9 @@ class TestContactModel(TestCase):
         )
 
     def test_booking_string_method_returns_right_string(self):
+        """
+        Test to check string return in contact model
+        """
         contact = self.contact
         string = f"{self.contact.first_name} {self.contact.last_name}, "
         string += f"{self.contact.created_date}"
