@@ -46,5 +46,5 @@ class Booking(models.Model):
         ordering = ('-created_date',)
 
     def __str__(self):
-        return f"Tour: {self.tour}, name: {self.name}," \
+        return f"Tour: {self.tour}, name: {self.name}, " \
                 f"date: {self.tour_date}"
