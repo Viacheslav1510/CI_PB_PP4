@@ -11,8 +11,6 @@ def home_page(request):
 
 @login_required
 def contact_page(request):
-    # user_email = request.user.email
-    # user = User.objects.filter(email=user_email).first()
     if request.method == 'POST':
         email = request.user.email
         contact_form = ContactForm(request.POST, initial={'email': email})

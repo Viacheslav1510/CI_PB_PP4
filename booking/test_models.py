@@ -5,6 +5,9 @@ import datetime
 
 
 class TestBookingModels(TestCase):
+    """
+    A class to test Booking model
+    """
     def setUp(self):
         """
         SetUp function to create user, login and create post
@@ -29,7 +32,10 @@ class TestBookingModels(TestCase):
             tour_date=datetime.date(2023, 4, 15)
         )
 
-    def test_post_string_method_returns_right_string(self):
+    def test_booking_string_method_returns_right_string(self):
+        """
+        Test to return right string from model method
+        """
         booking = self.booking
         string = f"Tour: {self.booking.tour}, name: {self.booking.name}, "
         string += f"date: {self.booking.tour_date}"

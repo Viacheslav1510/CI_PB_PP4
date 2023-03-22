@@ -9,7 +9,7 @@ import datetime
 
 class TestBookingViews(TestCase):
     """
-    A clas for testing booking views
+    A class for testing booking views
     """
 
     def setUp(self):

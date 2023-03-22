@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class ContactModel(models.Model):
     """
-    a class for the Contact model
+    A class for the Contact model
     """
     user = models.ForeignKey(
         User,
@@ -12,7 +12,7 @@ class ContactModel(models.Model):
         related_name="contact_user",
         null=True
         )
-   
+
     first_name = models.CharField(
         max_length=50,
         null=True
