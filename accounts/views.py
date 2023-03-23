@@ -6,6 +6,11 @@ from django.contrib import messages
 
 
 def register(request):
+    """
+    A function to render sign up page,
+    provide registration form
+    to register the user in database
+    """
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -20,23 +25,25 @@ def register(request):
 
 
 class CustomLoginView(LoginView):
+    """
+    A class to let user log in
+    """
     form_class = LoginForm
 
     def form_valid(self, form):
         remember_me = form.cleaned_data.get('remember_me')
-
         if not remember_me:
-            # set session expiry to 0 seconds. So it will automatically close the session after the browser is closed.
             self.request.session.set_expiry(0)
-
-            # Set session as modified to force data updates/cookie to be saved.
             self.request.session.modified = True
-
-        # else browser session will be as long as the session cookie time "SESSION_COOKIE_AGE" defined in settings.py
         return super(CustomLoginView, self).form_valid(form)
 
 
-def logout_confirm(request):
+def logged_out(request):
+    """
+    A function to render confirmation log out page,
+    provides a form which logs out the user on
+    'logout' input
+    """
     form = request.POST
     if request.method == 'POST':
         if form.get('logout'):
@@ -47,5 +54,8 @@ def logout_confirm(request):
     return render(request, 'accounts/logout.html')
 
 
-def logged_out(request):
+def logout_confirm(request):
+    """
+    A function to open log out confirmation
+    """
     return render(request, 'accounts/logout.html')

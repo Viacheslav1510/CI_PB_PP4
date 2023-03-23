@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from accounts.views import CustomLoginView
 from accounts.forms import LoginForm
-from django.contrib.auth import views as auth_views
+# from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -10,11 +10,11 @@ urlpatterns = [
     path(
         'login/',
         CustomLoginView.as_view(
-            redirect_authenticated_user=True, 
+            redirect_authenticated_user=True,
             template_name='accounts/login.html',
             authentication_form=LoginForm),
         name='accounts-login'
     ),
-    path('confirmation/', views.logout_confirm, name='logout-confirmation'),
-    path('logout/', views.logged_out, name='logged-out')
+    path('confirmation/', views.logged_out, name='logout-confirmation'),
+    path('logout/', views.logout_confirm, name='logged-out')
 ]
