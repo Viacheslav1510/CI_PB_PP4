@@ -5,8 +5,10 @@ from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
 class PostModel(models.Model):
+    """
+    A class to create Post model
+    """
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField(blank=False)
@@ -46,6 +48,9 @@ class PostModel(models.Model):
 
 
 class Comment(models.Model):
+    """
+    A class to create Comment model
+    """
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

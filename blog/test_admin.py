@@ -6,8 +6,13 @@ from django.contrib.auth.models import User
 
 
 class Test_Admin_Comment_Model(TestCase):
-
+    """
+    A class to test admin models
+    """
     def setUp(self):
+        """
+        A function to create user, post and comment for testing
+        """
         self.user = User.objects.create_user(
                 username='albajessica', email='foo@gmail.com',
                 password='bartolito')
@@ -28,6 +33,9 @@ class Test_Admin_Comment_Model(TestCase):
         self.commentModelAdmin = CommentAdmin(Comment,  self.site)
 
     def test_admin_can_approve_comments(self):
+        """
+        Test to approve comments in admin panel
+        """
         comment = self.comment
         queryset = Comment.objects.filter(body='Test comment body')
         self.commentModelAdmin.approve_comments(comment, queryset)

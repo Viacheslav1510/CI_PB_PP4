@@ -8,6 +8,10 @@ from django.core.paginator import Paginator
 
 
 def blog_home(request):
+    """
+    A function to open blog page,
+    provide existent posts and make pagination
+    """
     posts = PostModel.objects.all()
     paginator = Paginator(posts, 3)
     page = request.GET.get('page')
@@ -20,6 +24,10 @@ def blog_home(request):
 
 @login_required
 def post_details(request, slug):
+    """
+    A function to open post details page,
+    provide comment form and show existent comments
+    """
     post = get_object_or_404(PostModel, slug=slug)
     comments = post.comments
     if request.method == 'POST':
@@ -43,6 +51,10 @@ def post_details(request, slug):
 
 @login_required
 def create_post(request):
+    """
+    A function to open post creation page
+    and provide post creation form
+    """
     if request.method == "POST":
         form = PostModelForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,6 +73,10 @@ def create_post(request):
 
 @login_required
 def edit_post(request, slug):
+    """
+    A function to open post edit page
+    and provide post edit form
+    """
     post = get_object_or_404(PostModel, slug=slug, author=request.user)
     if request.method == 'POST':
         form = PostUpdateForm(request.POST, request.FILES, instance=post)
@@ -79,6 +95,9 @@ def edit_post(request, slug):
 
 @login_required
 def delete_post(request, slug):
+    """
+    A function to open post delete confirmation page
+    """
     post = get_object_or_404(PostModel, slug=slug, author=request.user)
     if request.method == 'POST':
         post.delete()
