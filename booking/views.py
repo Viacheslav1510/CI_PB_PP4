@@ -16,7 +16,7 @@ def tours_home(request):
 
 @login_required()
 def booking(request, tour_id):
-    tour = get_object_or_404(Tour, id=tour_id)  
+    tour = get_object_or_404(Tour, id=tour_id)
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
