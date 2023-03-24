@@ -10,7 +10,7 @@ class PostModel(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField(blank=False)
-    excerpt = models.TextField(max_length=200, blank=False)
+    excerpt = models.TextField(max_length=300, blank=False)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
