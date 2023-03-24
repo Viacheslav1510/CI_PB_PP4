@@ -4,6 +4,9 @@ from django import forms
 
 
 class RegistrationForm(UserCreationForm):
+    """
+    A class to create registration form
+    """
     email = forms.EmailField(required=False)
 
     class Meta:
@@ -17,6 +20,9 @@ class RegistrationForm(UserCreationForm):
 
 
 class LoginForm(AuthenticationForm):
+    """
+    A class to create LogIn form
+    """
     username = forms.CharField(
         max_length=100,
         required=True,
