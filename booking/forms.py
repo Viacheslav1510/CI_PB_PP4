@@ -5,14 +5,16 @@ from .models import Booking
 
 
 class DateInput(forms.DateInput):
-    """This class provides a calendar widget that the user can
+    """
+    A class to provide a calendar widget that the user can
     pick the booking date.
     """
     input_type = 'date'
 
 
 class BookingForm(forms.ModelForm):
-    """This class generates a form from the Booking model
+    """
+    A class to generate a form from the Booking model
     """
 
     tour_date = forms.DateField(
@@ -34,6 +36,9 @@ class BookingForm(forms.ModelForm):
 
 
 class EditBookingForm(forms.ModelForm):
+    """
+    A class to generate a form for edit booking page
+    """
     tour_date = forms.DateField(
         validators=[MaxValueValidator(
             datetime.date.today() + datetime.timedelta(days=30)

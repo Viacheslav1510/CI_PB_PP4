@@ -7,6 +7,10 @@ from .forms import BookingForm, EditBookingForm
 
 
 def tours_home(request):
+    """
+    A function to open tour main page
+    and provide existent tours
+    """
     tours = Tour.objects.all()
     context = {
         'tours': tours,
@@ -16,6 +20,11 @@ def tours_home(request):
 
 @login_required()
 def booking(request, tour_id):
+    """
+    A function to open tour booking page
+    and provide booking form
+    function checks booking availability
+    """
     tour = get_object_or_404(Tour, id=tour_id)
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -41,6 +50,10 @@ def booking(request, tour_id):
 
 @login_required()
 def user_bookings(request):
+    """
+    A function to open user bookings page
+    and provide already booked trips
+    """
     bookings = Booking.objects.filter(user=request.user)
     context = {
         'bookings': bookings,
@@ -49,6 +62,10 @@ def user_bookings(request):
 
 
 def edit_booking(request, booking_id):
+    """
+    A function to open edit booking page
+    and provide edit booking form
+    """
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == 'POST':
         form = EditBookingForm(request.POST, instance=booking)
@@ -71,6 +88,9 @@ def edit_booking(request, booking_id):
 
 
 def delete_booking(request, booking_id):
+    """
+    A function to open dlete booking confirmation page
+    """
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == 'POST':
         booking.delete()

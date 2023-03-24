@@ -6,6 +6,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Tour(models.Model):
+    """
+    A class to create Tour model
+    """
     tour_name = models.CharField(max_length=150, unique=True)
     description = models.TextField(max_length=500, default='kerry tour')
     price = models.DecimalField(max_digits=5, decimal_places=2)
@@ -22,6 +25,9 @@ class Tour(models.Model):
 
 
 class Booking(models.Model):
+    """
+    A class to create Booking model
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     tour = models.ForeignKey(Tour, null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=50)
