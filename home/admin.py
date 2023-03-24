@@ -5,6 +5,10 @@ from .models import ContactModel
 
 @admin.register(ContactModel)
 class ContactModelAdmin(admin.ModelAdmin):
+    """
+    A clas to register Contact Model in admin panel,
+    display fields and provide serach on field
+    """
     list_filter = (
         'first_name',
         'last_name',

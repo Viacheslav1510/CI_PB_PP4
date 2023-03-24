@@ -34,6 +34,9 @@ class TestHomeViews(TestCase):
         self.assertTemplateUsed(response, 'home/contact-us.html')
 
     def test_user_can_send_message(self):
+        """
+        Test to check possibility send message
+        """
         response = self.client.post(
             reverse('contact'), {
                 'first_name': 'Tom ',

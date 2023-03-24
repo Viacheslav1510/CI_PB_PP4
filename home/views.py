@@ -6,11 +6,18 @@ from .forms import ContactForm
 
 
 def home_page(request):
+    """
+    A fucntion to open home page
+    """
     return render(request, 'home/index.html')
 
 
 @login_required
 def contact_page(request):
+    """
+    A function to open contact us page
+    and provide contact form
+    """
     if request.method == 'POST':
         email = request.user.email
         contact_form = ContactForm(request.POST, initial={'email': email})
