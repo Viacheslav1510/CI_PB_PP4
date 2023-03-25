@@ -1,6 +1,12 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib import admin
 from daterangefilter.filters import DateRangeFilter
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Internal:
 from .models import ContactModel
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 @admin.register(ContactModel)
@@ -13,7 +19,7 @@ class ContactModelAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'email',
-        'created_date'
+        ('created_date', DateRangeFilter),
         )
     list_display = (
         'user',
@@ -23,5 +29,4 @@ class ContactModelAdmin(admin.ModelAdmin):
         'message',
         'created_date')
 
-    search_fields = ['last_name',]
-    list_filter = (('created_date', DateRangeFilter),)
+    search_fields = ['user__username', 'last_name', 'last_name',]
