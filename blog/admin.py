@@ -1,6 +1,12 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib import admin
-from .models import PostModel, Comment
 from django_summernote.admin import SummernoteModelAdmin
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Internal:
+from .models import PostModel, Comment
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 @admin.register(PostModel)
@@ -9,8 +15,9 @@ class PostModelAdmin(SummernoteModelAdmin):
     A class to register post model in admin panel
     """
     prepopulated_fields = {'slug': ('title',)}
-    list_display = ('title', 'date_created')
+    list_display = ('title', 'author', 'date_created')
     summernote_fields = ('content')
+    search_fields = ['title', 'author__username']
 
 
 @admin.register(Comment)
