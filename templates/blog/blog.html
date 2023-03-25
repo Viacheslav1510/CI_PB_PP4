@@ -4,13 +4,7 @@
 
 <div class="container-fluid" style="padding: 0;">
     <!-- Background image -->
-    <div class="text-center bg-image" style="
-        background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677755475/kerry_wgckh1.jpg');
-        height: 500px;
-        background-size:     cover;
-        background-repeat:   no-repeat;
-        background-position: center center;  
-        ">
+    <div class="text-center blog-bg-image">
         <div class="row py-4">
             <div class="col-sm-12 col-md-6">
                 <div class="blog-add-post py-5" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -19,7 +13,6 @@
                     <a class="btn btn-outline-light btn-lg add-post-button" href="{% url 'add-blog' %}"
                         role="button">Add Post</a>
                 </div>
-
             </div>
             <div class="col-sm-12 col-md-6">
                 <img src="{% static 'images/polaroid.png' %}" alt="polaroid" class="polaroid-image">
@@ -43,7 +36,6 @@
                     </div>
             </div>
         </div>
-
         {% endfor %}
     </div>
     <!-- pagination -->

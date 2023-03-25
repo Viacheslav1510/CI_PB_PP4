@@ -12,7 +12,10 @@
                         <h5 class="text-center">Edit Booking</h5>
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <input type="submit" class="btn btn-success btn-sm" value="Update">
+                        <div class="inline-flex jus justify-content-center">
+                            <input type="submit" class="btn btn-success btn-sm" value="Update">
+                            <a href="{% url 'bookings'%}" class="btn btn-dark btn-sm float-right">  Back  </a>
+                        </div>
                     </form>
                 </div>
             </div>

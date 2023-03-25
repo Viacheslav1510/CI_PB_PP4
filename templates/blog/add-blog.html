@@ -12,7 +12,10 @@
                         <h5 class="text-center">Add post form</h5>
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <input type="submit" class="btn btn-success btn-sm" value="Post">
+                        <div class="inline-flex jus justify-content-center">
+                            <input type="submit" class="btn btn-success btn-sm" value="Post">
+                            <a href="{% url 'blog' %}" class="btn btn-dark btn-sm float-right">  Back  </a>
+                        </div>
                     </form>
                 </div>
             </div>
