@@ -1,8 +1,14 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase
-from .models import Comment, PostModel
-from .admin import CommentAdmin
 from django.contrib.admin.sites import AdminSite
 from django.contrib.auth.models import User
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Internal:
+from .models import Comment, PostModel
+from .admin import CommentAdmin
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Test_Admin_Comment_Model(TestCase):
