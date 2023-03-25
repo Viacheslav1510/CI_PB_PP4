@@ -4,7 +4,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from daterangefilter.filters import DateRangeFilter
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Internal:
 from .models import Tour, Booking
