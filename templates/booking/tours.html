@@ -11,10 +11,12 @@
             <div class="card card-block posts-card">
                 <a href="{% url 'book-trip' tour.id %}"><img src="{{ tour.tour_image.url }}" alt="featured_image" class="posts-img"></a>
                 <h5 class="posts-title">{{ tour.tour_name }}</h5>
-                <p class="small font-italic">{{ tour.description }}</p>
-                <div class="card-footer text-muted d-flex justify-content-between mt-auto">
-                    <a href="{% url 'book-trip' tour.id %}" class="btn btn-dark">Book Now</a>
-                    Price: €{{ tour.price }}
+                <p class="small font-italic p-2">{{ tour.description }}</p>
+                <div class="card-footer mt-auto">
+                    <div class="text-muted d-flex justify-content-between float-top">
+                        <a href="{% url 'book-trip' tour.id %}" class="btn btn-dark">Book Now</a>
+                        <p class="float-right">Price: €{{ tour.price }}</p>
+                    </div>
                 </div>
             </div>
         </div>
