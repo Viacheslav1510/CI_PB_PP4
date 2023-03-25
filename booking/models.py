@@ -1,8 +1,14 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Tour(models.Model):
@@ -33,9 +39,9 @@ class Booking(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(blank=True, null=True)
     phoneRegex = RegexValidator(
-        regex=r'^\+?1?\d{8,15}$',
+        regex=r'^(\+\d{1,3})?,?\s?\d{8,13}$',
         message="Please enter a valid phone number,"
-        "e.g. 123456789. Up to 15 digits allowed.",
+        "e.g. +123456789. Up to 13 digits allowed.",
         code="invalid"
     )
     phone = models.CharField(
