@@ -27,8 +27,7 @@ class PostModel(models.Model):
     featured_image = CloudinaryField(
         'blog_image',
         null=True,
-        blank=True,
-        default='/images/man-1.jpg'
+        blank=False,
     )
     date_created = models.DateTimeField(auto_now_add=True)
 
