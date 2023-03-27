@@ -23,6 +23,12 @@
     - [Site Owner](#site-owner)
     - [Admin / Authorised User](#admin--authorised-user)
     - [Kanban, Epics \& User Stories](#kanban-epics--user-stories)
+  - [Design](#design)
+    - [Colours](#colours)
+    - [Fonts](#fonts)
+    - [Structure](#structure)
+      - [Website pages](#website-pages)
+      - [Database](#database)
     
 ## About
 
@@ -130,6 +136,56 @@ Back to [top](#table-of-contents)<hr>
 
 <details><summary>User Stories</summary>
 <img src="docs/user_stories/user_stories.png">
+<img src="docs/user_stories/grey.png">
 </details>
 
 Back to [top](#table-of-contents)<hr>
+
+## Design
+
+### Colours
+
+I chose dark light colours for home page to keep a summertime feeling and inspire user for a trip.
+Grey colour was choosen for posts background, tours and bookings
+The colors I wanted to stay close to  [colorhunt.co](https://colorhunt.co/palette/feffdeddffbc91c78852734d)
+
+<details><summary>See colour pallet</summary>
+<img src="docs/features/color_palette.png">
+<img src="docs/features/grey.png">
+</details>
+
+### Fonts
+
+The fonts selected were from Google Fonts, "EB Garamond" was choosen for big headings, "Noto Serif Lao" choosen for smaller text and paragraphs
+
+### Structure
+
+#### Website pages
+
+The site was designed for the user to be familiar with the layout such as a navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+The footer contains all relevant social media links that the business has so the user can visit any social media site and follow the business.
+
+- The site consists of the following pages:
+  - Homepage with website description on nature background, about us section and testimonials
+  - Blog page with header image background, section for existent posts with pagination for three posts on each page.
+  - Post details displays a blog the user has selected so they can read the blog, if they are logged in they can also leave a comment which will then need to be approved before it is displayed. If it's a user's post he can edit and delete this post.
+  - Edit post page allows user to change title, excerp, content and post image.
+  - Delete post page allows user to delete their post which will delete it from database.
+  - Tours page allows registered users to choose a trip and book a date which suits them.
+  - My bookings displays all bookings for the user that they have made, user can edit or delete booking.
+  - Edit booking allows the user to change their date, email and phone number.
+  - Delete booking allows the user to cancel the booking which will then delete it from the database.
+  - Contact us allows the user to send site owner a message if they are registered.
+  - Login / Logout allows users to login to make create posts, edit, delete their own posts, make bookings, view, edit, and delete bookings.
+  - Register allows the user to regiser so they can use the post creation feature and booking system.
+  - 404 error page to display if a 404 error is raised.
+
+#### Database
+
+- Built with Python and the Django framework with a database of a Postgres for the deployed Heroku version(production).
+- Five database models was created to show all the content.
+
+<details><summary>See database diagram</summary>
+<img src="docs/features/db_diagram.png">
+</details>
