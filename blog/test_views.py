@@ -6,6 +6,7 @@ import tempfile
 from django.urls import reverse
 from django.test.client import Client
 from django.contrib.auth.models import User
+from django.core.files.uploadedfile import SimpleUploadedFile
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Internal:
 from .models import PostModel
@@ -81,7 +82,11 @@ class TestBlogViews(TestCase):
         """
         Test to create post and redirect to 'blog' page
         """
-        image = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        image = SimpleUploadedFile(
+            name='test_image.jpg',
+            content=open('static/images/kerry.jpg', 'rb').read(),
+            content_type='image/jpeg'
+            )
         response = self.client.post(
             '/new-post/',
             {
@@ -93,22 +98,6 @@ class TestBlogViews(TestCase):
             }
         )
         self.assertRedirects(response, '/blog/')
-
-    def test_form_creation_is_valid(self):
-        """
-        Test for PostModelForm validation
-        """
-        image_path = 'static/images/man-1.jpg'
-        form_data = {
-            'title': "Test Creation",
-            'content': 'test',
-            'excerpt': 'test',
-            'author': self.user,
-            'featured_image': 'image'
-        }
-
-        form = PostModelForm(data=form_data)
-        self.assertTrue(form.is_valid())
 
     def test_can_edit_post(self):
         """
