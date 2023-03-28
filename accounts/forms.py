@@ -34,13 +34,7 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(
         max_length=50,
         required=True,
-        widget=forms.PasswordInput(attrs={
-            'placeholder': 'Password',
-            'class': 'form-control',
-            'data-toggle': 'password',
-            'id': 'password',
-            'name': 'password',
-            })
+        widget=forms.PasswordInput()
     )
     remember_me = forms.BooleanField(required=False)
 
