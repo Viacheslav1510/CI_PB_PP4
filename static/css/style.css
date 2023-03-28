@@ -11,12 +11,12 @@ body {
 h1,
 h2 {
   font-family: 'EB Garamond', serif;
-  font-size: 800;
+  font-weight: 800;
 }
 
 h5 {
   font-family: 'Noto Serif Lao', serif;
-  font-size: 600;
+  font-weight: 600;
 }
 
 .container-fluid {
@@ -179,7 +179,7 @@ h5 {
   font-size: 20px;
   letter-spacing: 2px;
   font-family: 'Noto Serif Lao', serif;
-  font-size: 600;
+  font-weight: 600;
 }
 
 .about-img {

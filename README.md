@@ -27,37 +27,15 @@
     - [Colours](#colours)
     - [Fonts](#fonts)
     - [Structure](#structure)
-      - [Website pages](#website-pages)
-      - [Database](#database)
-        - [User Model (standard django model)](#user-model-standard-django-model)
-        - [PostModel](#postmodel)
-        - [Comment Model](#comment-model)
-        - [Tour Model](#tour-model)
-        - [Booking Model](#booking-model)
-        - [ContactModel](#contactmodel)
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
     - [Languages \& Frameworks](#languages--frameworks)
     - [Libraries \& Tools](#libraries--tools)
   - [Features](#features)
-    - [Home page](#home-page)
-    - [Navigation](#navigation)
-    - [Footer](#footer)
-    - [Blog page](#blog-page)
-    - [Post creation](#post-creation)
-    - [Post details](#post-details)
-    - [Edit post / Delete post](#edit-post--delete-post)
-    - [Comments](#comments)
-    - [Tours page](#tours-page)
-    - [Booking](#booking)
-    - [My Bookings page](#my-bookings-page)
-    - [Edit / Delete booking](#edit--delete-booking)
-    - [Contact Us page](#contact-us-page)
-    - [Sign up / Register](#sign-up--register)
-    - [Login](#login)
-    - [Logout](#logout)
   - [Validation](#validation)
     - [HTML Validation](#html-validation)
+    - [CSS Validation](#css-validation)
+    - [PEP8 Validation](#pep8-validation)
     
 ## About
 
@@ -189,7 +167,7 @@ The fonts selected were from Google Fonts, "EB Garamond" was choosen for big hea
 
 ### Structure
 
-#### Website pages
+Website pages
 
 The site was designed for the user to be familiar with the layout such as a navigation bar along the top of the pages and a hamburger menu button for smaller screen.
 
@@ -210,7 +188,7 @@ The footer contains all relevant social media links that the business has so the
   - Register allows the user to regiser so they can use the post creation feature and booking system.
   - 404 error page to display if a 404 error is raised.
 
-#### Database
+Database
 
 - Built with Python and the Django framework with a database of a Postgres for the deployed Heroku version(production).
 - Five database models was created to show all the content.
@@ -219,67 +197,61 @@ The footer contains all relevant social media links that the business has so the
 <img src="docs/features/db_diagram.png">
 </details>
 
-##### User Model (standard django model)
-The User Model contains the following:
-- user_id
-- password
-- last_login
-- is_superuser
-- username
-- first_name
-- last_name
-- email
-- is_staff
-- is_active
-- date_joined
+  - User Model (standard django model) contains the following:
+    - user_id
+    - password
+    - last_login
+    - is_superuser
+    - username
+    - first_name
+    - last_name
+    - email
+    - is_staff
+    - is_active
+    - date_joined
 
-##### PostModel
-The PostModel contains the following:
-- title
-- slug
-- content
-- excerpt
-- author (ForeignKey, User)
-- featured_image
-- date_created
+  - PostModel contains the following:
+    - title
+    - slug
+    - content
+    - excerpt
+    - author (ForeignKey, User)
+    - featured_image
+    - date_created
 
-##### Comment Model
-The Comment Model contains the following:
-- user (ForeignKey, User)
-- post (ForeignKey, PostModel)
-- body
-- date_created
-- approved
+  - Comment Model contains the following:
+    - user (ForeignKey, User)
+    - post (ForeignKey, PostModel)
+    - body
+    - date_created
+    - approved
 
-##### Tour Model
-The Tour Model contains the following:
-- tour_name
-- description
-- price
-- max_seats
-- available
-- tour_image
+  - Tour Model contains the following:
+    - tour_name
+    - description
+    - price
+    - max_seats
+    - available
+    - tour_image
 
 
-##### Booking Model
-The Booking Model contains the following:
-- user (ForeignKey, User)
-- tour (ForeignKey, Tour)
-- name
-- email
-- phone
-- tour_date
-- created_date
-- modified_date
+  - Booking Model contains the following:
+    - user (ForeignKey, User)
+    - tour (ForeignKey, Tour)
+    - name
+    - email
+    - phone
+    - tour_date
+    - created_date
+    - modified_date
 
-##### ContactModel
-The ContactModel contains the following:
-- user (ForeignKey, User)
-- first_name
-- last_name
-- email
-- message
-- created_date
+  - ContactModel contains the following:
+    - user (ForeignKey, User)
+    - first_name
+    - last_name
+    - email
+    - message
+    - created_date
 
 ### Wireframes
 The wireframes were created using Balsamiq
@@ -324,7 +296,7 @@ Back to [top](#table-of-contents)
 
 ## Features 
 
-### Home page
+Home page
 
 - Home page includes nav bar, website description, about us section, testimonials and footer with social links
 
@@ -333,7 +305,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/home-2.png">
 </details>
 
-### Navigation
+<hr>
+
+Navigation
 
 - Active links on all website pages
 - On small screens switches to hamburger menu
@@ -346,7 +320,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/nav-3.png">
 </details>
 
-### Footer
+<hr>
+
+Footer
 - Contains social media links and copyright
 - Media links are blank, so they're open in a new tab to ensure user is not directed away from the website
 - Displayed across all pages
@@ -355,7 +331,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/footer.png">
 </details>
 
-### Blog page
+<hr>
+
+Blog page
 
 - Page contains background image and mask with Add Post button
 - Contains an existent posts section with pagination for 3 posts per page
@@ -367,7 +345,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/blog-2.png">
 </details>
 
-### Post creation 
+<hr>
+
+Post creation 
 
 - An authorized person can create a post
 - creation form provided
@@ -377,7 +357,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/add_post.png">
 </details>
 
-### Post details
+<hr>
+
+Post details
 
 - Contains expanded post
 - Comments form
@@ -389,7 +371,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/post-details-2.png">
 </details>
 
-### Edit post / Delete post
+<hr>
+
+Edit post / Delete post
 
 - When user open his own post details edit and delete buttons are shown
 - User can edit post with provided edit form
@@ -401,7 +385,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/delete-post.png">
 </details>
 
-### Comments 
+<hr>
+
+Comments 
 
 - Logged in users can leave the comments under post
 - Existent comments are shown in comments section
@@ -410,7 +396,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/comments.png">
 </details>
 
-### Tours page
+<hr>
+
+Tours page
 
 - Contains all available tours created by admin
 - An authoraized user can choose a tour and book the date for trip
@@ -419,7 +407,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/tours.png">
 </details>
 
-### Booking
+<hr>
+
+Booking
 
 - User can book a trip with form provided
 - Unathorized user should log in or create an account
@@ -428,7 +418,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/booking.png">
 </details>
 
-### My Bookings page
+<hr>
+
+My Bookings page
 
 - All user's booked trips are shown on page
 - user can edit or delete booking
@@ -437,7 +429,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/my_bookings.png">
 </details>
 
-### Edit / Delete booking
+<hr>
+
+Edit / Delete booking
 
 - User can edit booking with form provided
 - To delete the booking user should confirm it
@@ -447,7 +441,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/delete_booking.png">
 </details>
 
-### Contact Us page
+<hr>
+
+Contact Us page
 
 - An authorized user can send a message to site owner
 - When user creates an account with filled in email field, contact us form autofills email field
@@ -457,7 +453,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/contact_us.png">
 </details>
 
-### Sign up / Register
+<hr>
+
+Sign up / Register
 - Allow users to register an acoount
 - Username and password is required, email is optional
   
@@ -465,7 +463,9 @@ Back to [top](#table-of-contents)
 <img src="docs/features/signup.png">
 </details>
 
-### Login
+<hr>
+
+Login
 - User can login to create a post, edit/delete own posts, book a tour, edit and delete bookings, leave a comment under posts and send message to site owner
 
 <details><summary>See feature images</summary>
@@ -473,7 +473,10 @@ Back to [top](#table-of-contents)
 <img src="docs/features/login-2.png">
 </details>
 
-### Logout
+<hr>
+
+Logout
+
 - Allows the user to securely log out
 - Ask user if they are sure they want to log out
 
@@ -551,3 +554,103 @@ The W3C Markup Validation Service was used to validate all html files
 <details><summary>logout.html</summary>
 <img src="docs/validation/html/logout_page.png">
 </details>
+
+### CSS Validation 
+The W3C Jigsaw CSS Validation Service was used to validate css file
+
+<details><summary>style.css</summary>
+<img src="docs/validation/css.png">
+</details>
+
+### PEP8 Validation
+[PEP8 Python Validator](https://pep8ci.herokuapp.com/) was used to check the code for PEP8 requirements.
+
+- Accounts app
+  - <details><summary>forms.py</summary>
+    <img src="docs/validation/pep8/acc_forms.png">
+    </details>
+  - <details><summary>test_views.py</summary>
+    <img src="docs/validation/pep8/acc_test.png">
+    </details>
+  - <details><summary>urls.py</summary>
+    <img src="docs/validation/pep8/acc_urls.png">
+    </details>
+  - <details><summary>views.py</summary>
+    <img src="docs/validation/acc_views.png">
+    </details>
+
+- Blog app
+  - <details><summary>admin.py</summary>
+    <img src="docs/validation/pep8/blog_admin.png">
+    </details>
+  - <details><summary>forms.py</summary>
+    <img src="docs/validation/pep8/blog_forms.png">
+    </details>
+  - <details><summary>models.py</summary>
+    <img src="docs/validation/pep8/blog_models.png">
+    </details>
+  - <details><summary>test_admin.py</summary>
+    <img src="docs/validation/pep8/blog_test_admin.png">
+    </details>
+  - <details><summary>test_forms.py</summary>
+    <img src="docs/validation/pep8/blog_test_forms.png">
+    </details>
+  - <details><summary>test_models.py</summary>
+    <img src="docs/validation/pep8/blog_test_models.png">
+    </details>
+  - <details><summary>test_views.py</summary>
+    <img src="docs/validation/pep8/blog_test_views.png">
+    </details>
+  - <details><summary>urls.py</summary>
+    <img src="docs/validation/pep8/blog_urls.png">
+    </details>
+  - <details><summary>views.py</summary>
+    <img src="docs/validation/pep8/blog_views.png">
+    </details>
+
+- Booking app
+  - <details><summary>admin.py</summary>
+    <img src="docs/validation/pep8/book_admin.png">
+    </details> 
+  - <details><summary>forms.py</summary>
+    <img src="docs/validation/pep8/book_forms.png">
+    </details>     
+  - <details><summary>models.py</summary>
+    <img src="docs/validation/pep8/book_models.png">
+    </details>     
+  - <details><summary>test_models.py</summary>
+    <img src="docs/validation/pep8/book_test_models.png">
+    </details>     
+  - <details><summary>test_views.py</summary>
+    <img src="docs/validation/pep8/book_test_views.png">
+    </details>     
+  - <details><summary>urls.py</summary>
+    <img src="docs/validation/pep8/book_urls.png">
+    </details>     
+  - <details><summary>views.py</summary>
+    <img src="docs/validation/pep8/book_views.png">
+    </details>
+
+- Home app     
+  - <details><summary>admin.py</summary>
+    <img src="docs/validation/pep8/home_admin.png">
+    </details>
+  - <details><summary>forms.py</summary>
+    <img src="docs/validation/pep8/home_forms.png">
+    </details>
+  - <details><summary>models.py</summary>
+    <img src="docs/validation/pep8/home_models.png">
+    </details>
+  - <details><summary>test_models.py</summary>
+    <img src="docs/validation/pep8/home_test_models.png">
+    </details>
+  - <details><summary>test_views.py</summary>
+    <img src="docs/validation/pep8/home_test_views.png">
+    </details>
+  - <details><summary>urls.py</summary>
+    <img src="docs/validation/pep8/home_urls.png">
+    </details>
+  - <details><summary>views.py</summary>
+    <img src="docs/validation/pep8/home_views.png">
+    </details>
+
