@@ -56,6 +56,8 @@
     - [Sign up / Register](#sign-up--register)
     - [Login](#login)
     - [Logout](#logout)
+  - [Validation](#validation)
+    - [HTML Validation](#html-validation)
     
 ## About
 
@@ -480,3 +482,72 @@ Back to [top](#table-of-contents)
 </details>
 
 Back to [top](#table-of-contents)
+
+## Validation
+
+### HTML Validation 
+The W3C Markup Validation Service was used to validate all html files
+
+<details><summary>index.html</summary>
+<img src="docs/validation/html/index.png">
+</details>
+
+<details><summary>blog.html</summary>
+<img src="docs/validation/html/blog_page.png">
+</details>
+
+<details><summary>add-blog.html</summary>
+<img src="docs/validation/html/add_post.png">
+</details>
+
+<details><summary>blog-details.html</summary>
+<img src="docs/validation/html/post_details.png">
+</details>
+
+<details><summary>edit-blog.html</summary>
+<img src="docs/validation/html/edit_post.png">
+</details>
+
+<details><summary>delete-blog.html</summary>
+<img src="docs/validation/html/delete_post.png">
+</details>
+
+<details><summary>tours.html</summary>
+<img src="docs/validation/html/tours_page.png">
+</details>
+
+<details><summary>book-a-trip.html</summary>
+<img src="docs/validation/html/book_trip_page.png">
+</details>
+
+<details><summary>bookings.html</summary>
+<img src="docs/validation/html/my_bookings_page.png">
+</details>
+
+<details><summary>edit-booking.html</summary>
+<img src="docs/validation/html/edit_booking_page.png">
+</details>
+
+<details><summary>delete-booking.html</summary>
+<img src="docs/validation/html/delete_booking.png">
+</details>
+
+<details><summary>contact-us.html</summary>
+<img src="docs/validation/html/contact_us.png">
+</details>
+
+<details><summary>message-received.html</summary>
+<img src="docs/validation/html/message_received.png">
+</details>
+
+<details><summary>sign_up.html</summary>
+<img src="docs/validation/html/singunp_page.png">
+</details>
+
+<details><summary>login.html</summary>
+<img src="docs/validation/html/login_page.png">
+</details>
+
+<details><summary>logout.html</summary>
+<img src="docs/validation/html/logout_page.png">
+</details>
