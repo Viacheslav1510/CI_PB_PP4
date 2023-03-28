@@ -42,6 +42,20 @@
   - [Features](#features)
     - [Home page](#home-page)
     - [Navigation](#navigation)
+    - [Footer](#footer)
+    - [Blog page](#blog-page)
+    - [Post creation](#post-creation)
+    - [Post details](#post-details)
+    - [Edit post / Delete post](#edit-post--delete-post)
+    - [Comments](#comments)
+    - [Tours page](#tours-page)
+    - [Booking](#booking)
+    - [My Bookings page](#my-bookings-page)
+    - [Edit / Delete booking](#edit--delete-booking)
+    - [Contact Us page](#contact-us-page)
+    - [Sign up / Register](#sign-up--register)
+    - [Login](#login)
+    - [Logout](#logout)
     
 ## About
 
@@ -329,3 +343,140 @@ Back to [top](#table-of-contents)
 <img src="docs/features/nav-2.png">
 <img src="docs/features/nav-3.png">
 </details>
+
+### Footer
+- Contains social media links and copyright
+- Media links are blank, so they're open in a new tab to ensure user is not directed away from the website
+- Displayed across all pages
+
+<details><summary>See feature images</summary>
+<img src="docs/features/footer.png">
+</details>
+
+### Blog page
+
+- Page contains background image and mask with Add Post button
+- Contains an existent posts section with pagination for 3 posts per page
+- User can click on post title or image to see post details
+- Page contains pagination buttons  
+
+<details><summary>See feature images</summary>
+<img src="docs/features/blog-1.png">
+<img src="docs/features/blog-2.png">
+</details>
+
+### Post creation 
+
+- An authorized person can create a post
+- creation form provided
+- all the fields are required
+
+<details><summary>See feature images</summary>
+<img src="docs/features/add_post.png">
+</details>
+
+### Post details
+
+- Contains expanded post
+- Comments form
+- Existent comments section
+- If it's user's post he can edit or delete it
+
+<details><summary>See feature images</summary>
+<img src="docs/features/post-details-1.png">
+<img src="docs/features/post-details-2.png">
+</details>
+
+### Edit post / Delete post
+
+- When user open his own post details edit and delete buttons are shown
+- User can edit post with provided edit form
+- User should confirm to delete post
+
+<details><summary>See feature images</summary>
+<img src="docs/features/edit-post.png">
+<img src="docs/features/edit-post-1.png">
+<img src="docs/features/delete-post.png">
+</details>
+
+### Comments 
+
+- Logged in users can leave the comments under post
+- Existent comments are shown in comments section
+
+<details><summary>See feature images</summary>
+<img src="docs/features/comments.png">
+</details>
+
+### Tours page
+
+- Contains all available tours created by admin
+- An authoraized user can choose a tour and book the date for trip
+
+<details><summary>See feature images</summary>
+<img src="docs/features/tours.png">
+</details>
+
+### Booking
+
+- User can book a trip with form provided
+- Unathorized user should log in or create an account
+
+<details><summary>See feature images</summary>
+<img src="docs/features/booking.png">
+</details>
+
+### My Bookings page
+
+- All user's booked trips are shown on page
+- user can edit or delete booking
+
+<details><summary>See feature images</summary>
+<img src="docs/features/my_bookings.png">
+</details>
+
+### Edit / Delete booking
+
+- User can edit booking with form provided
+- To delete the booking user should confirm it
+
+<details><summary>See feature images</summary>
+<img src="docs/features/edit_booking.png">
+<img src="docs/features/delete_booking.png">
+</details>
+
+### Contact Us page
+
+- An authorized user can send a message to site owner
+- When user creates an account with filled in email field, contact us form autofills email field
+- Contact form sends message to admin panel
+
+<details><summary>See feature images</summary>
+<img src="docs/features/contact_us.png">
+</details>
+
+### Sign up / Register
+- Allow users to register an acoount
+- Username and password is required, email is optional
+  
+<details><summary>See feature images</summary>
+<img src="docs/features/signup.png">
+</details>
+
+### Login
+- User can login to create a post, edit/delete own posts, book a tour, edit and delete bookings, leave a comment under posts and send message to site owner
+
+<details><summary>See feature images</summary>
+<img src="docs/features/login.png">
+<img src="docs/features/login-2.png">
+</details>
+
+### Logout
+- Allows the user to securely log out
+- Ask user if they are sure they want to log out
+
+<details><summary>See feature images</summary>
+<img src="docs/features/logout.png">
+</details>
+
+Back to [top](#table-of-contents)
