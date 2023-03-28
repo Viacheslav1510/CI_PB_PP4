@@ -28,6 +28,99 @@ h5 {
   padding: 0;
 }
 
+/* Forms containers */
+.blog-details-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678394196/IMG-1497_wnwwzz.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.add-post-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678285809/2560x1600-850690-Black-Sea-coast-Bulgaria-Coast-Sunrises-and-sunsets_sxrswx.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.edit-post-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678369895/edit_l8sjls.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.tours-main-container {
+  background-color: #6E7582;
+  min-height: 100vh;
+}
+
+.book-a-trip-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678805211/653720_oozhtb.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bookings-container {
+  background-color: #6E7582;
+  min-height: 100vh;
+}
+
+.contact-us-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678884290/technology-computer-creative-design-58af04bd8ec9cfffbd5f33322e0782eb_ue40n6.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.login-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.signup-container {
+  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678291147/wallpaperflare.com_wallpaper_1_v2uqcw.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.confirmation-contaner {
+  background-color: #6E7582;
+  min-height: 100vh;
+}
+
+/* Cards */
+.details-post-card {
+  background-color: #0A1931;
+}
+
+.form-card {
+  background-color: #781D42;
+  box-shadow: 10px 10px 15px rgb(238, 129, 4);
+}
+
+.login-card {
+  background-color: #0A1931;
+  box-shadow: 10px 10px 15px rgb(238, 129, 4);
+}
+
+.confirmation-card {
+  min-height: 210px;
+  background-color: #52686A;
+  box-shadow: 10px 10px 15px rgba(192, 238, 242, 1);
+}
+
 /* Home */
 .main-image {
   background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1677873036/kerry-main_jgo7lh.jpg');
@@ -242,103 +335,15 @@ h5 {
   margin: 0px 2px;
 }
 
-/* Forms containers */
-.blog-details-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678394196/IMG-1497_wnwwzz.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.add-post-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678285809/2560x1600-850690-Black-Sea-coast-Bulgaria-Coast-Sunrises-and-sunsets_sxrswx.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.edit-post-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678369895/edit_l8sjls.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.tours-main-container {
-  background-color: #6E7582;
-  min-height: 100vh;
-}
-
-.book-a-trip-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678805211/653720_oozhtb.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.bookings-container {
-  background-color: #6E7582;
-  min-height: 100vh;
-}
-
-.contact-us-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678884290/technology-computer-creative-design-58af04bd8ec9cfffbd5f33322e0782eb_ue40n6.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.login-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678290488/sign_up_lfdfw9.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.signup-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678291147/wallpaperflare.com_wallpaper_1_v2uqcw.jpg');
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.confirmation-contaner {
-  background-color: #6E7582;
-  min-height: 100vh;
-}
-
-/* Cards */
-.details-post-card {
-  background-color: #0A1931;
-}
-
-.form-card {
-  background-color: #781D42;
-  box-shadow: 10px 10px 15px rgb(238, 129, 4);
-}
-
-.login-card {
-  background-color: #0A1931;
-  box-shadow: 10px 10px 15px rgb(238, 129, 4);
-}
-
-.confirmation-card {
-  min-height: 210px;
-  background-color: #52686A;
-  box-shadow: 10px 10px 15px rgba(192, 238, 242, 1);
-}
-
 /* Booking pages */
 .book-trip-text {
   color: #781D42;
   font-weight: bold;
+}
+
+/* Contact us */
+.contact-column {
+  padding: 0;
 }
 
 /* Footer */
