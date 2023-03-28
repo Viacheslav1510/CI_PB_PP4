@@ -29,6 +29,19 @@
     - [Structure](#structure)
       - [Website pages](#website-pages)
       - [Database](#database)
+        - [User Model (standard django model)](#user-model-standard-django-model)
+        - [PostModel](#postmodel)
+        - [Comment Model](#comment-model)
+        - [Tour Model](#tour-model)
+        - [Booking Model](#booking-model)
+        - [ContactModel](#contactmodel)
+    - [Wireframes](#wireframes)
+  - [Technologies Used](#technologies-used)
+    - [Languages \& Frameworks](#languages--frameworks)
+    - [Libraries \& Tools](#libraries--tools)
+  - [Features](#features)
+    - [Home page](#home-page)
+    - [Navigation](#navigation)
     
 ## About
 
@@ -188,4 +201,131 @@ The footer contains all relevant social media links that the business has so the
 
 <details><summary>See database diagram</summary>
 <img src="docs/features/db_diagram.png">
+</details>
+
+##### User Model (standard django model)
+The User Model contains the following:
+- user_id
+- password
+- last_login
+- is_superuser
+- username
+- first_name
+- last_name
+- email
+- is_staff
+- is_active
+- date_joined
+
+##### PostModel
+The PostModel contains the following:
+- title
+- slug
+- content
+- excerpt
+- author (ForeignKey, User)
+- featured_image
+- date_created
+
+##### Comment Model
+The Comment Model contains the following:
+- user (ForeignKey, User)
+- post (ForeignKey, PostModel)
+- body
+- date_created
+- approved
+
+##### Tour Model
+The Tour Model contains the following:
+- tour_name
+- description
+- price
+- max_seats
+- available
+- tour_image
+
+
+##### Booking Model
+The Booking Model contains the following:
+- user (ForeignKey, User)
+- tour (ForeignKey, Tour)
+- name
+- email
+- phone
+- tour_date
+- created_date
+- modified_date
+
+##### ContactModel
+The ContactModel contains the following:
+- user (ForeignKey, User)
+- first_name
+- last_name
+- email
+- message
+- created_date
+
+### Wireframes
+The wireframes were created using Balsamiq
+<details><summary></summary>
+<img src="">
+</details>
+
+## Technologies Used
+
+### Languages & Frameworks
+
+- HTML
+- CSS
+- Javascript
+- Python
+- Django
+
+### Libraries & Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Balsamiq](https://balsamiq.com/)
+- [Bootstrap v4.6](https://getbootstrap.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Favicon.io](https://favicon.io)
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Font Awesome](https://fontawesome.com/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Heroku Platform](https://id.heroku.com/login)
+- [Postgres](https://www.postgresql.org/)
+- [Summernote](https://summernote.org/)
+- Validation:
+  - [WC3 Validator](https://validator.w3.org/)
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+  - [JShint](https://jshint.com/)
+  - [Pycodestyle(PEP8)](https://pypi.org/project/pycodestyle/)
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+  - [Wave Validator](https://wave.webaim.org/)
+
+Back to [top](#table-of-contents)
+
+## Features 
+
+### Home page
+
+- Home page includes nav bar, website description, about us section, testimonials and footer with social links
+
+<details><summary>See feature images</summary>
+<img src="docs/features/home-1.png">
+<img src="docs/features/home-2.png">
+</details>
+
+### Navigation
+
+- Active links on all website pages
+- On small screens switches to hamburger menu
+- Indicates login/logout in status
+- Displayed on all pages
+
+<details><summary>See feature images</summary>
+<img src="docs/features/nav-1.png">
+<img src="docs/features/nav-2.png">
+<img src="docs/features/nav-3.png">
 </details>
