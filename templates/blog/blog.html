@@ -27,8 +27,9 @@
         {% for post in page_obj %}
         <div class="col-sm-12 col-md-6 col-lg-4 py-1 mt-2">
             <div class="card card-block posts-card">
-                <a href="{% url 'blog-detail' post.slug %}" class="text-decoration-none">
-                    <img src="{{ post.featured_image.url }}" alt="featured_image" class="posts-img">
+                    <a href="{% url 'blog-detail' post.slug %}" class="text-decoration-none">
+                        <img src="{{ post.featured_image.url }}" alt="featured_image" class="posts-img">
+                    </a>
                     <h5 class="posts-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
                     <p class="small font-italic">{{ post.excerpt }}</p>
                     <div class="card-footer text-muted text-center mt-auto">
