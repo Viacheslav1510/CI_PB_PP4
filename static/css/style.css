@@ -202,6 +202,20 @@ h5 {
 }
 
 /* Blog details */
+
+.details-column {
+  padding: 0;
+}
+
+.details-image {
+  height: 380px; 
+  width: 100%;
+}
+
+.author-details {
+  padding: 0;
+}
+
 .delete-btn {
   background-color: darkred;
 }
@@ -333,6 +347,11 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+
+  .details-image {
+    height: 250px;
+  }
+
   .verticaltext {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
