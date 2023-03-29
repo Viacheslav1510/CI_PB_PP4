@@ -37,6 +37,9 @@
     - [CSS Validation](#css-validation)
     - [PEP8 Validation](#pep8-validation)
     - [Lighthouse](#lighthouse)
+    - [Wave](#wave)
+        - [Back to top](#back-to-top)
+  - [Testing](#testing)
     
 ## About
 
@@ -754,3 +757,30 @@ Mobile
 - <details><summary>Logout</summary>
     <img src="docs/validation/lighthouse/logout_desktop.png">
     </details>
+
+### Wave
+
+WAVE was used to test the websites accessibility.
+
+- <details><summary>Home</summary>
+    <img src="docs/validation/wave/home.png">
+    </details>
+- <details><summary>Blog</summary>
+    <img src="docs/validation/wave/blog.png">
+    </details>
+- <details><summary>Tours</summary>
+    <img src="docs/validation/wave/tours.png">
+    </details>
+- <details><summary>Sign Up</summary>
+    <img src="docs/validation/wave/sign_up.png">
+    </details>
+- <details><summary>Login</summary>
+    <img src="docs/validation/wave/login.png">
+    </details>
+
+##### Back to [top](#table-of-contents)
+
+## Testing
+
+1. Manual testing
+2. Automated testing
