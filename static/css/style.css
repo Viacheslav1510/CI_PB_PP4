@@ -70,9 +70,9 @@ h5 {
   background-color: #6E7582;
   min-height: 100vh;
 }
-
+/* 'https://res.cloudinary.com/slava-cloud/image/upload/v1678884290/technology-computer-creative-design-58af04bd8ec9cfffbd5f33322e0782eb_ue40n6.jpg' */
 .contact-us-container {
-  background-image: url('https://res.cloudinary.com/slava-cloud/image/upload/v1678884290/technology-computer-creative-design-58af04bd8ec9cfffbd5f33322e0782eb_ue40n6.jpg');
+  background-image: url('static/images/contact-us.jpg');
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
