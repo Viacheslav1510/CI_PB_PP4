@@ -36,6 +36,7 @@
     - [HTML Validation](#html-validation)
     - [CSS Validation](#css-validation)
     - [PEP8 Validation](#pep8-validation)
+    - [Lighthouse](#lighthouse)
     
 ## About
 
@@ -654,3 +655,102 @@ The W3C Jigsaw CSS Validation Service was used to validate css file
     <img src="docs/validation/pep8/home_views.png">
     </details>
 
+### Lighthouse
+
+Performance, best practices and SEO was tested using Lighthouse.
+
+Desktop 
+
+- <details><summary>Home</summary>
+    <img src="docs/validation/lighthouse/home_desktop.png">
+    </details>  
+- <details><summary>Blog</summary>
+    <img src="docs/validation/lighthouse/blog_desktop.png">
+    </details>
+- <details><summary>Add Post</summary>
+    <img src="docs/validation/lighthouse/new_post_desktop.png">
+    </details>
+- <details><summary>Post details</summary>
+    <img src="docs/validation/lighthouse/post_details_desktop.png">
+    </details>
+- <details><summary>Edit post</summary>
+    <img src="docs/validation/lighthouse/edit_post_desktop.png">
+    </details>
+- <details><summary>Delete post</summary>
+    <img src="docs/validation/lighthouse/delete_post.png">
+    </details>
+- <details><summary>Tours</summary>
+    <img src="docs/validation/lighthouse/tours_desktop.png">
+    </details>
+- <details><summary>Book a trip</summary>
+    <img src="docs/validation/lighthouse/book_trip_desktop.png">
+    </details>
+- <details><summary>My Bookings</summary>
+    <img src="docs/validation/lighthouse/my_bookings_desktop.png">
+    </details>
+- <details><summary>Edit booking</summary>
+    <img src="docs/validation/lighthouse/edit_booking_desktop.png">
+    </details>
+- <details><summary>Delete booking</summary>
+    <img src="docs/validation/lighthouse/delete_booking.png">
+    </details>
+- <details><summary>Contact Us</summary>
+    <img src="docs/validation/lighthouse/contact_desktop.png">
+    </details>
+- <details><summary>Sign Up</summary>
+    <img src="docs/validation/lighthouse/sign_up_desktop.png">
+    </details>
+- <details><summary>Login</summary>
+    <img src="docs/validation/lighthouse/login_desktop.png">
+    </details>
+- <details><summary>Logout</summary>
+    <img src="docs/validation/lighthouse/logout_desktop.png">
+    </details>
+
+Mobile 
+
+- <details><summary>Home</summary>
+    <img src="docs/validation/lighthouse/home_mobile.png">
+    </details>  
+- <details><summary>Blog</summary>
+    <img src="docs/validation/lighthouse/blog_mobile.png">
+    </details>
+- <details><summary>Add Post</summary>
+    <img src="docs/validation/lighthouse/new_post_mobile.png">
+    </details>
+- <details><summary>Post details</summary>
+    <img src="docs/validation/lighthouse/post_details_mobile.png">
+    </details>
+- <details><summary>Edit post</summary>
+    <img src="docs/validation/lighthouse/edit_post_mobile.png">
+    </details>
+- <details><summary>Delete post</summary>
+    <img src="docs/validation/lighthouse/delete_post.png">
+    </details>
+- <details><summary>Tours</summary>
+    <img src="docs/validation/lighthouse/tours_desktop.png">
+    </details>
+- <details><summary>Book a trip</summary>
+    <img src="docs/validation/lighthouse/book_trip_mobile.png">
+    </details>
+- <details><summary>My Bookings</summary>
+    <img src="docs/validation/lighthouse/my_bookings_mobile.png">
+    </details>
+- <details><summary>Edit booking</summary>
+    <img src="docs/validation/lighthouse/edit_booking_mobile.png">
+    </details>
+- <details><summary>Delete booking</summary>
+    <img src="docs/validation/lighthouse/delete_booking.png">
+    </details>
+- <details><summary>Contact Us</summary>
+    <img src="docs/validation/lighthouse/contact_us_mobile.png">
+    </details>
+- <details><summary>Sign Up</summary>
+    <img src="docs/validation/lighthouse/sign_up_mobile.png">
+    </details>
+- <details><summary>Login</summary>
+    <img src="docs/validation/lighthouse/login_mobile.png">
+    </details>
+- <details><summary>Logout</summary>
+    <img src="docs/validation/lighthouse/logout_desktop.png">
+    </details>
