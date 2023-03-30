@@ -95,7 +95,7 @@ def edit_booking(request, booking_id):
 
 def delete_booking(request, booking_id):
     """
-    A function to open dlete booking confirmation page
+    A function to open delete booking confirmation page
     """
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == 'POST':
