@@ -41,6 +41,8 @@
   - [Testing](#testing)
     - [Manual testing](#manual-testing)
     - [Automated testing](#automated-testing)
+    - [Device Testing \& Browser compatibility](#device-testing--browser-compatibility)
+  - [Bugs](#bugs)
     
 ## About
 
@@ -269,6 +271,7 @@ The wireframes were created using Balsamiq
 
 - HTML
 - CSS
+- Bootstrap 4.6
 - Javascript
 - Python
 - Django
@@ -291,8 +294,7 @@ The wireframes were created using Balsamiq
 - Validation:
   - [WC3 Validator](https://validator.w3.org/)
   - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
-  - [JShint](https://jshint.com/)
-  - [Pycodestyle(PEP8)](https://pypi.org/project/pycodestyle/)
+  - [PEP8 Python Validator](https://pep8ci.herokuapp.com/)
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
   - [Wave Validator](https://wave.webaim.org/)
 
@@ -1177,3 +1179,53 @@ Home app
 - <details><summary>Coverage Home</summary>
   <img src="docs/test/automated/coverage_home.png">
   </details>
+
+Back to [top](#table-of-contents)
+
+### Device Testing & Browser compatibility
+
+The site uses to test on various real world devices was [BrowserStack](https://ci-pp4-the-diplomat.herokuapp.com/)  
+
+This allowed me to test on real devices and not just device emulators.
+
+The following devices were used to test my site:
+
+<details><summary>Samsung Galaxy S22 Ultra</summary>
+<img src="docs/test/samsung.png">
+</details>
+
+<details><summary>Apple iPhone 13</summary>
+<img src="docs/test/iphone13.png">
+</details>
+
+<details><summary>Huawei</summary>
+<img src="docs/test/huawey.png">
+</details>
+
+<details><summary>Mozilla Firefox (v111 latest)</summary>
+<img src="docs/test/mozilla.png">
+</details>
+
+<details><summary>Google Chrome (v111 latest)</summary>
+<img src="docs/test/chrome.png">
+</details>
+
+<details><summary>Edge (v111 latest)</summary>
+<img src="docs/test/chrome.png">
+</details>
+
+Back to [top](#table-of-contents)
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Unauthorized user can create a post | Add login required decorator to create_post view |
+| Post details can not be shown(bad request) | Add slugify function to post model to create automatically the slug |
+| Blog pagination doesn't work | Send page_object variable instead of posts objects in blog_home view |
+| Home link is active on all pages | Add statement to request full path to home view |
+| User can book a trip on date even when seats are full  | In booking view filter booking objects by date and compare it to max_seats |
+| Booking form accepting phone number that are too short | Use Regex validator to valid phone number input |
+| User can make a booking on date in the past | Add widget DateInput to booking form and set minimum valid date |
+| Message doesn't shown after user login | Add messages to login view |
+| 'Invalid or missing CSRF token' message while render booking page | Add csrf_token to edit-booking.html form |
