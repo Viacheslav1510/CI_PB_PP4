@@ -38,8 +38,9 @@
     - [PEP8 Validation](#pep8-validation)
     - [Lighthouse](#lighthouse)
     - [Wave](#wave)
-        - [Back to top](#back-to-top)
   - [Testing](#testing)
+    - [Manual testing](#manual-testing)
+    - [Automated testing](#automated-testing)
     
 ## About
 
@@ -101,14 +102,14 @@ Back to [top](#table-of-contents)<hr>
 5. As a User I can look at about company section so that help me learn more about organization (should have)
 6. As a User I can contact organization so that I can get in touch with a company (must have)
 7. As a User I can Create, Update and Delete blogs so that gives me permission to change my posts (must have)
-8. As a User I can view blog posts page by page so that I can browse without seeing an overloaded page
+8. As a User I can view blog posts page by page so that I can browse without seeing an overloaded page (must have)
 9. As a User I can open post details so I can see detailed post information and leave a comment (must have)
-10. As a User I can leave a comment so that allows me to participate in a forum-like discussion
+10. As a User I can leave a comment so that allows me to participate in a forum-like discussion (must have)
 11. As a User I can be interested in a different blog of similar themes so that gives me opportunity to see similar but new content (could have)
 12. As a User I can book a tour so that I can reserve a date for the trip (must have)
 13. As a User I can Update or Delete my booking so that I can be flexible with date (must have)
 14. As a User I can Sign Up to website so that gives me more permissions (must have)
-15. As a user I can login so that I can write a post and book a trip
+15. As a user I can login so that I can write a post and book a trip (must have)
 16. As a User I can Logout so that can save my data (must have)
 
 ### Site Owner
@@ -124,7 +125,6 @@ Back to [top](#table-of-contents)<hr>
 22. As an Admin / Authorised User I can add functionality to admin site so I can display, search and filter fields (must have)
 23. As an Admin / Authorised User I can create, update and delete posts and comments so that gives me permission to any blog content (must have)
 24. As an Admin / Authorised User I can create trip so that gives my user opportunity to book a trip (must have)
-25. As an Admin / Authorised User I can search and filter any created content so that I can find the information I am looking for (must have)
 
 ### Kanban, Epics & User Stories
 
@@ -778,9 +778,351 @@ WAVE was used to test the websites accessibility.
     <img src="docs/validation/wave/login.png">
     </details>
 
-##### Back to [top](#table-of-contents)
+Back to [top](#table-of-contents)
 
 ## Testing
 
 1. Manual testing
 2. Automated testing
+
+### Manual testing
+
+1. As a first time user I can see a website description so that should help me understand what the site is about
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open website | Homepage will load | Works as expected |
+| Look at main text  | Description is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_1.png">
+</details>
+
+2. As a user I can navigate across the site so I can move to each feature of the site easily
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click on any link in the navigation bar | All pages are loaded | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_2-1.png">
+<img src="docs/test/manual/user_story_2-2.png">
+</details>
+
+
+3. As a User I can look at header images through the pages so that provide me with a visual
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open Home page | Header image is shown | Works as expected |
+| Open Blog page | Header image is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_3-1.png">
+<img src="docs/test/manual/user_story_3-2.png">
+</details>
+
+
+4. As a User I can look at previous visitors testimonials so that I know what people think about company
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open Home page | Page is loaded | Works as expected |
+| Scroll down to testimonials section | Testimonials are shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_4-1.png">
+<img src="docs/test/manual/user_story_4-2.png">
+</details>
+
+
+5. As a User I can look at about company section so that help me learn more about organization
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open Home page | Page is loaded | Works as expected |
+| Scroll down to about us section | About us section is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_5-1.png">
+<img src="docs/test/manual/user_story_5-2.png">
+</details>
+
+
+6. As a User I can contact organization so that I can get in touch with a company
+
+Only logged in users can contact website owner
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| On any page click Login link in the navigation | Login page is loaded | Works as expected |
+| Fill in the form or create an account | User is logged in | Works as expected |
+| Click Contact Us link | Contact Us page is loaded | Works as expected |
+| Send message after filled in form | Message about successful process is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_6-1.png">
+<img src="docs/test/manual/user_story_6-2.png">
+<img src="docs/test/manual/user_story_6-3.png">
+<img src="docs/test/manual/user_story_6-4.png">
+<img src="docs/test/manual/user_story_6-5.png">
+</details>
+
+7. As a User I can Create, Update and Delete blogs so that gives me permission to change my posts
+Only logged in users can create, edit and delete posts
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Blog link in navigation | Blog page is loaded | Works as expected |
+| Click Add Post button to create post | Creation post page is loaded | Works as expected |
+| Fill in the post creation form and click post button| Post is show on blog page | Works as expected |
+| Click on post title or image to see post details | Post details page is shown | Works as expected |
+| Click edit button to edit your own post | Edit post form is shown | Works as expected |
+| Chage fields you want to edit your post and click update button | Edited post is shown in post details | Works as expected |
+| Click delete button | Delete confirmation is shown | Works as expected |
+| Click delete button to confirm | Deleted post is disappeared on the blog page | Works as expected |
+| Open someone else's post | User cannot edit or delete a post other than his own | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_7-1.png">
+<img src="docs/test/manual/user_story_7-2.png">
+<img src="docs/test/manual/user_story_7-3.png">
+<img src="docs/test/manual/user_story_7-4.png">
+<img src="docs/test/manual/user_story_7-5.png">
+<img src="docs/test/manual/user_story_7-6.png">
+<img src="docs/test/manual/user_story_7-7.png">
+<img src="docs/test/manual/user_story_7-8.png">
+<img src="docs/test/manual/user_story_7-9.png">
+</details>
+
+8. As a User I can view blog posts page by page so that I can browse without seeing an overloaded page
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Blog link in navigation | Blog page is loaded | Works as expected |
+| Click any number of page you want to see | Page is changed | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_8-1.png">
+<img src="docs/test/manual/user_story_8-2.png">
+</details>
+
+9. As a User I can open post details so I can see detailed post information and leave a comment
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Post title or image | Post details is loaded | Works as expected |
+| Scroll down to comments section | Comments section is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_9-1.png">
+<img src="docs/test/manual/user_story_9-2.png">
+</details>
+
+10. As a User I can leave a comment so that allows me to participate in a forum-like discussion
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Leave a message in comments form and click comment button | Post details is loaded | Works as expected |
+| Scroll down to comments section | Message left successful is shown | Works as expected |
+| Admin has to approve comment to show leaved message | Comments section is shown | Works as expected |
+| After admin approve the comment click Comments button | Comments are shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_10-1.png">
+<img src="docs/test/manual/user_story_10-2.png">
+<img src="docs/test/manual/user_story_10-3.png">
+<img src="docs/test/manual/user_story_10-4.png">
+</details>
+
+11. As a User I can be interested in a different blog of similar themes so that gives me opportunity to see similar but new content
+
+Haven't provided. Left for further development
+
+12. As a User I can book a tour so that I can reserve a date for the trip
+
+Tours are created by Admin, user can only choose a trip that suits.
+
+<details><summary>See tour creation images</summary>
+<img src="docs/test/manual/user_story_12-1.png">
+<img src="docs/test/manual/user_story_12-2.png">
+</details>
+
+Only authorized user can book a trip
+
+<details><summary>See unthoraized user images</summary>
+<img src="docs/test/manual/user_story_12-6.png">
+<img src="docs/test/manual/user_story_12-7.png">
+</details>
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open tours page by click tours link in navigation | Tours page is loaded | Works as expected |
+| Choose any tour you want to book and click Book Now button | Booking form is shown | Works as expected |
+| Fill in the form and click Book button | My bookings are shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_12-5.png">
+<img src="docs/test/manual/user_story_12-3.png">
+<img src="docs/test/manual/user_story_12-4.png">
+</details>
+
+13. As a User I can Update or Delete my booking so that I can be flexible with date
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open my bookings page by click link in navigation | My bookings page is loaded | Works as expected |
+| Click edit button to edit booking | Edit booking form is shown | Works as expected |
+| Change a field you want in the form and click Update button | Changed booking is shown | Works as expected |
+| Click delete button | Delete confirmation is shown | Works as expected |
+| Click delete button to confirm | Message that booking is deleted is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_13-1.png">
+<img src="docs/test/manual/user_story_13-2.png">
+<img src="docs/test/manual/user_story_13-3.png">
+<img src="docs/test/manual/user_story_13-4.png">
+<img src="docs/test/manual/user_story_13-4.png">
+</details>
+
+14. As a User I can Sign Up to website so that gives me more permissions
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Sign Up link in navigation | Sign up page is loaded | Works as expected |
+| Fill in sign up form | Edit booking form is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_14-1.png">
+<img src="docs/test/manual/user_story_14-2.png">
+<img src="docs/test/manual/user_story_14-3.png">
+</details>
+
+If user tries to create existent username, form show message 
+<details><summary>User already exists</summary>
+<img src="docs/test/manual/user_story_14-3.png">
+</details>
+
+15. As a user I can login so that I can write a post and book a trip
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Log in link in navigation | Log in page is loaded | Works as expected |
+| Fill in log in form | Log in form show message if fields are not valid | Works as expected |
+| User can click remember me button to remember their information | Program memorize user information | Works as expected |
+| Click Log In button | User is logged in and message is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_15-1.png">
+<img src="docs/test/manual/user_story_15-2.png">
+<img src="docs/test/manual/user_story_15-3.png">
+<img src="docs/test/manual/user_story_15-4.png">
+</details>
+
+16. As a User I can Logout so that can save my data
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click Logout link in navigation | Log out confirmation page is loaded | Works as expected |
+| Click logout to confirm | User logged out and message is shown | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_16-1.png">
+<img src="docs/test/manual/user_story_16-2.png">
+<img src="docs/test/manual/user_story_16-3.png">
+</details>
+
+17. As a site owner I can create footer with social links so that user can move to my social media
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open any page and scroll down at bottom of page | See footer | Works as expected |
+| Click on any footer link | Page opened in separate window | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_17-1.png">
+<img src="docs/test/manual/user_story_17-2.png">
+</details>
+
+18. As a Site owner I can help user navigate through content with search field so that allows me to take control of user site experience 
+
+Haven't provided. Left for further development
+
+19. As a Site Owner I can create blog so that provide user regular updates through published posts
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open blog page | Blog exists | Works as expected |
+
+20. As a Site Owner I can provide all devices responsiveness for my users so that they have a good user experience
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open any page on small screen | All content is responsive | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_20-1.png">
+<img src="docs/test/manual/user_story_20-2.png">
+<img src="docs/test/manual/user_story_20-3.png">
+<img src="docs/test/manual/user_story_20-4.png">
+<img src="docs/test/manual/user_story_20-5.png">
+</details>
+
+21. As an Admin / Authorised User I can log in to Site administration so I can access the back end of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open admin page | Log in form is shown | Works as expected |
+| Fill in form with Admin information | Admin is logged in | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_21-1.png">
+<img src="docs/test/manual/user_story_21-2.png">
+</details>
+
+22. As an Admin / Authorised User I can add functionality to admin site so I can display, search and filter fields
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open any model on admin page | Feilds, search bar and filter are shown | Works as expected |
+| Filter or search content you want | Search and filter work | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_22-1.png">
+<img src="docs/test/manual/user_story_22-2.png">
+<img src="docs/test/manual/user_story_22-3.png">
+</details>
+
+23. As an Admin / Authorised User I can create, update and delete posts and comments so that gives me permission to any blog content 
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open any model on admin page | Feilds, search bar and filter are shown | Works as expected |
+| Filter or search content you want | Search and filter work | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_23-1.png">
+<img src="docs/test/manual/user_story_23-2.png">
+</details>
+
+24. As an Admin / Authorised User I can create trip so that gives my user opportunity to book a trip 
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Open tours in admin panel  | Add tour button is shown | Works as expected |
+| Click add tour button and fill in all fields | Fields are shown | Works as expected |
+| Save the tour | New tour is shown in admin panel and on the website | Works as expected |
+
+<details><summary></summary>
+<img src="docs/test/manual/user_story_24-1.png">
+<img src="docs/test/manual/user_story_24-2.png">
+<img src="docs/test/manual/user_story_24-3.png">
+</details>
+
+Back to [top](#table-of-contents)
+
+### Automated testing
+
+- Testing was done using the built in Django module, unittest.
+- Coverage was also usesd to generate a report
