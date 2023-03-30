@@ -41,6 +41,7 @@ class CustomLoginView(LoginView):
         if not remember_me:
             self.request.session.set_expiry(0)
             self.request.session.modified = True
+        messages.success(self.request, "You've been logged in")
         return super(CustomLoginView, self).form_valid(form)
 
 
