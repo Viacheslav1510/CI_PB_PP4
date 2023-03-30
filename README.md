@@ -1124,5 +1124,56 @@ Back to [top](#table-of-contents)
 
 ### Automated testing
 
-- Testing was done using the built in Django module, unittest.
-- Coverage was also usesd to generate a report
+Testing was done using the built in Django module, unittest.
+Coverage was also usesd to generate a report
+
+Accounts app
+
+- <details><summary>test_views.py</summary>
+  <img src="docs/test/automated/acc_test_views.png">
+  </details>
+- <details><summary>Coverage Accounts</summary>
+  <img src="docs/test/automated/coverage_accounts.png">
+  </details>
+
+Blog app 
+
+- <details><summary>test_admin.py</summary>
+  <img src="docs/test/automated/blog_test_admin.png">
+  </details>
+- <details><summary>test_forms.py</summary>
+  <img src="docs/test/automated/blog_test_forms.png">
+  </details>
+- <details><summary>test_models.py</summary>
+  <img src="docs/test/automated/blog_test_models.png">
+  </details>
+- <details><summary>test_views.py</summary>
+  <img src="docs/test/automated/blog_test_views.png">
+  </details>
+- <details><summary>Coverage Blog</summary>
+  <img src="docs/test/automated/coverage_blog.png">
+  </details>
+
+Booking app
+
+- <details><summary>test_models.py</summary>
+  <img src="docs/test/automated/book_test_models.png">
+  </details>
+- <details><summary>test_views.py</summary>
+  <img src="docs/test/automated/blog_test_views.png">
+  </details>
+- <details><summary>Coverage Booking</summary>
+  <img src="docs/test/automated/coverage_booking.png">
+  </details>
+
+Home app
+
+- <details><summary>test_models.py</summary>
+  <img src="docs/test/automated/home_test_models.png">
+  </details>
+- <details><summary>test_views.py</summary>
+  <img src="docs/test/automated/home_test_views.png">
+  </details>
+- <details><summary>Coverage Home</summary>
+  <img src="docs/test/automated/coverage_home.png">
+  </details>
