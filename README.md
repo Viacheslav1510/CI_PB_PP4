@@ -43,6 +43,14 @@
     - [Automated testing](#automated-testing)
     - [Device Testing \& Browser compatibility](#device-testing--browser-compatibility)
   - [Bugs](#bugs)
+  - [Deployment](#deployment)
+    - [Fork Repository](#fork-repository)
+    - [Clone Repository](#clone-repository)
+  - [Credits](#credits)
+    - [Images](#images)
+    - [Code](#code)
+  - [Acknowledgements](#acknowledgements)
+    - [Special thanks to the following:](#special-thanks-to-the-following)
     
 ## About
 
@@ -1229,3 +1237,246 @@ Back to [top](#table-of-contents)
 | User can make a booking on date in the past | Add widget DateInput to booking form and set minimum valid date |
 | Message doesn't shown after user login | Add messages to login view |
 | 'Invalid or missing CSRF token' message while render booking page | Add csrf_token to edit-booking.html form |
+
+## Deployment
+
+Installing Django and supporting libraries
+
+- Terminal:
+1. Install Django and gunicorn ```pip3 install 'django<4' gunicorn```
+2. Install library for PostgeSQL```pip3 install dj_database_url psycopg2```
+3. Install Cloudinary Libraries ```pip3 install dj3-cloudinary-storage```
+4. Create requirements file ```pip3 freeze --local > requirements.txt```
+5. Create Project ```django-admin startproject pp4-ci```
+6. Create App (blog) ```python3 manage.py startapp blog```
+
+- settings.py:
+```
+  INSTALLED_APPS = [
+    …
+    'blog',
+]
+```
+
+- Terminal: 
+1. Migrate Changes ```python3 manage.py migrate``` 
+
+<hr>
+
+Deploying an app to Heroku(empty app)
+
+- Create a new app on heroku
+
+  1. Log in to Heroku and go to the Dashboard.
+  2. Click "New"  <details><summary>Details</summary>
+                  <img src="docs/deployment/h-1.png">
+                  </details>
+
+  3. Click "Create New App" <details><summary>Details</summary>
+                            <img src="docs/deployment/h-2.png">
+                            </details>
+  4. Give your app name and select Region <details><summary>Details</summary>
+                            <img src="docs/deployment/h-3.png">
+                            </details>                             
+
+- Create a database
+
+  1. Log in to ElephantSQL.com to access your dashboard
+  2. Click "Create New Instance"
+  3. Set up your plan
+  4. Select "Select Region"
+  5. Select a data center near you
+  6. Then click "Review"
+  7. Check your details are correct and then click "Create instance"
+
+- Create an env.py file
+
+  1. In your project workspace, create a file called env.py.
+  2. Add env.py file to .gitignore file
+  3. In your env.py file add the following line of code: 
+  ```
+  import os
+  ```
+  4. Set next environment variables:
+  - Return to the ElephantSQL dashboard and click on the database instance name for this project
+  - In the URL section, click the copy icon to copy the database URL
+  ```
+  os.environ["DATABASE_URL"]="<DATABASE_URL>"
+  ```
+  - Add a SECRET_KEY 
+  ```
+  os.environ["SECRET_KEY"]="my_super^secret@key"
+  ```
+  5. Save the file
+   
+- Modify settings.py 
+  
+  1. Open up your settings.py file and add the following code below your Path import
+  ```
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+      import env
+  ```
+  2. Remove the insecure secret key provided by Django and change your SECRET_KEY variable to the following
+  ```
+   SECRET_KEY = os.environ.get('SECRET_KEY')
+  ```
+  3. Comment out the original DATABASES variable and add the code below, as shown
+  ```
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': BASE_DIR / 'db.sqlite3',
+    #     }
+    # }
+        
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+  ```
+  4. Save settings.py
+  5. Run the migration command in your terminal to migrate your database structure to the newly-connected ElephantSQL database
+  ```
+  python manage.py migrate
+  ```
+  6. Add, commit and push your project to GitHub.
+
+- Add Heroku Config Vars
+  
+  1. Go back to the Heroku dashboard and open the Settings tab
+  2. Add three config vars:
+    - ```DATABASE_URL: DATABASE_URL```
+    - ```SECRET_KEY: YOUR_SECRET_KEY```
+    - ```PORT: 8000```
+
+- Get static and media files stored on Cloudinary
+
+  1. Set Up Cloudinary
+    - Create Cloudinary account [cloudinary.com](https://cloudinary.com/)
+    - Verify your email and you will be brought to the dashboard
+    - Go to dashboard and copy "API Enviroment variable"
+  2. Go to env.py and add another line:
+   ```
+    os.environ["CLOUDINARY_URL"] = "cloudinary://URL"
+   ```
+  3. Go to Heroku Dashboard settings and add to Config Vars new line:
+    - ```CLOUDINARY_URL: cloudinary://URL```
+    - ```Disable_COLLECTSTATIC: 1```
+  4. Go to settings.py:
+  - add cloudinary app:
+    ```
+    INSTALLED_APPS = [
+        …
+        'cloudinary',
+        'blog',
+    ]
+    ```
+  - add next lines to static files section:
+   ```
+   STATIC_URL = '/static/'
+   STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+   STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+   STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+   MEDIA_URL = '/media/'
+   DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+   MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+   ```
+  - create templates directory:
+   ```
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    TEMPALTES_DIR = os.path.join(BASE_DIR, 'templates')
+
+    ...
+    TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [TEMPALTES_DIR],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+    ]
+   ```
+  - add allowed host:
+
+  ```
+  ALLOWED_HOSTS = ['<heroku-app-name>.herokuapp.com', 'localhost']
+  ```
+  5. Create media, static and templates folders on the top level
+
+- Create ```Procfile``` on the top level:
+  1. Type next line inside Procfyle:
+      ```
+      web: gunicorn <project_name>.wsgi
+      ``` 
+  2. add, commit and push
+
+- Deploy on Heroku
+
+  1. Go to Heroku Dashboard Deploy section
+  2. Choose deploy method GitHub
+  3. Search for deploy repository
+  4. Click Connect
+  5. Click Deploy Branch
+    
+    <details><summary>Details</summary>
+    <img src="docs/deployment/h-4.png">
+    <img src="docs/deployment/h-5.png">
+    </details>
+
+Final Deployment(after created project)
+
+  1. Go to settings.py and change:
+   ```
+    DEBUG = FALSE
+
+    X_FRAME_OPTIONS = 'SAMORIGIN' # for Summernote
+   ```
+  2. Update requirements file by Terminal command: ```pip3 freeze --local > requirements.txt```
+  3. Add, commit and push project
+  4. Go to Heroku Dashboard settings and delete ```DISABLE_COLLECTSTATIC``` config var
+  5. Go to Heroku Dashboard deploy section and scroll down to Deploy Branch button and click it.
+
+<hr>
+
+### Fork Repository
+To fork the repository by following these steps:
+1. Go to the GitHub repository
+2. Click on Fork button in upper right hand corner
+<hr>
+
+### Clone Repository
+You can clone the repository by following these steps:
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone.
+
+Back to [top](#table-of-contents)
+
+## Credits
+
+### Images
+
+Images used were sourced from Pexels.com and an AI image generator (Dalle2) was used for an image with the permission from OpenAI
+
+### Code
+
+Bootstrap dark navigation theme was used alongside boostrap classes and carousel
+
+## Acknowledgements
+
+### Special thanks to the following:
+- Code Institute
+- My Mentor Mo Shami
