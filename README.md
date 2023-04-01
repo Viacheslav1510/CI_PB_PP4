@@ -269,8 +269,26 @@ Database
 
 ### Wireframes
 The wireframes were created using Balsamiq
-<details><summary></summary>
-<img src="">
+<details><summary>Home</summary>
+<img src="docs/wireframes/home.jpg">
+</details>
+<details><summary>Blog</summary>
+<img src="docs/wireframes/blog.jpg">
+</details>
+<details><summary>Post Details</summary>
+<img src="docs/wireframes/post_details.jpg">
+</details>
+<details><summary>Tours</summary>
+<img src="docs/wireframes/tours.jpg">
+</details>
+<details><summary>My Bookings</summary>
+<img src="docs/wireframes/my_bookings.jpg">
+</details>
+<details><summary>Sign Up</summary>
+<img src="docs/wireframes/sign_up.jpg">
+</details>
+<details><summary>Log In</summary>
+<img src="docs/wireframes/log_in.jpg">
 </details>
 
 ## Technologies Used
