@@ -1334,12 +1334,20 @@ Deploying an app to Heroku(empty app)
 - Create a database
 
   1. Log in to ElephantSQL.com to access your dashboard
-  2. Click "Create New Instance"
-  3. Set up your plan
-  4. Select "Select Region"
+  2. Click "Create New Instance" <details><summary>Details</summary>
+                            <img src="docs/deployment/sql-1.png">
+                            </details> 
+  3. Set up your plan  
+  4. Select "Select Region" <details><summary>Details</summary>
+                            <img src="docs/deployment/sql-2.png">
+                            </details>
   5. Select a data center near you
-  6. Then click "Review"
-  7. Check your details are correct and then click "Create instance"
+  6. Then click "Review" <details><summary>Details</summary>
+                            <img src="docs/deployment/sql-3.png">
+                            </details>
+  7. Check your details are correct and then click "Create instance" <details><summary>Details</summary>
+                            <img src="docs/deployment/sql-4.png">
+                            </details>
 
 - Create an env.py file
 
@@ -1400,7 +1408,9 @@ Deploying an app to Heroku(empty app)
   2. Add three config vars:
     - ```DATABASE_URL: DATABASE_URL```
     - ```SECRET_KEY: YOUR_SECRET_KEY```
-    - ```PORT: 8000```
+    - ```PORT: 8000``` <details><summary>Details</summary>
+                            <img src="docs/deployment/her-1.png">
+                            </details>
 
 - Get static and media files stored on Cloudinary
 
@@ -1408,6 +1418,9 @@ Deploying an app to Heroku(empty app)
     - Create Cloudinary account [cloudinary.com](https://cloudinary.com/)
     - Verify your email and you will be brought to the dashboard
     - Go to dashboard and copy "API Enviroment variable"
+      <details><summary>Details</summary>
+      <img src="docs/deployment/cloud-1.png">
+      </details>
   2. Go to env.py and add another line:
    ```
     os.environ["CLOUDINARY_URL"] = "cloudinary://URL"
@@ -1465,6 +1478,9 @@ Deploying an app to Heroku(empty app)
   5. Create media, static and templates folders on the top level
 
 - Create ```Procfile``` on the top level:
+  <details><summary>Details</summary>
+  <img src="docs/deployment/proc.png">
+  </details>
   1. Type next line inside Procfyle:
       ```
       web: gunicorn <project_name>.wsgi
