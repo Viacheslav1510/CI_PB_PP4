@@ -328,6 +328,7 @@ Back to [top](#table-of-contents)
 Home page
 
 - Home page includes nav bar, website description, about us section, testimonials and footer with social links
+- User stories covered: 1, 2, 3, 4, 5
 
 <details><summary>See feature images</summary>
 <img src="docs/features/home-1.png">
@@ -342,6 +343,7 @@ Navigation
 - On small screens switches to hamburger menu
 - Indicates login/logout in status
 - Displayed on all pages
+- User stories covered: 2
 
 <details><summary>See feature images</summary>
 <img src="docs/features/nav-1.png">
@@ -355,6 +357,7 @@ Footer
 - Contains social media links and copyright
 - Media links are blank, so they're open in a new tab to ensure user is not directed away from the website
 - Displayed across all pages
+- User stories covered: 17
 
 <details><summary>See feature images</summary>
 <img src="docs/features/footer.png">
@@ -368,6 +371,7 @@ Blog page
 - Contains an existent posts section with pagination for 3 posts per page
 - User can click on post title or image to see post details
 - Page contains pagination buttons  
+- User stories covered: 7, 8, 19
 
 <details><summary>See feature images</summary>
 <img src="docs/features/blog-1.png">
@@ -381,6 +385,7 @@ Post creation
 - An authorized person can create a post
 - creation form provided
 - all the fields are required
+- User stories covered: 7 
 
 <details><summary>See feature images</summary>
 <img src="docs/features/add_post.png">
@@ -394,6 +399,7 @@ Post details
 - Comments form
 - Existent comments section
 - If it's user's post he can edit or delete it
+- User stories covered: 7, 9, 10
 
 <details><summary>See feature images</summary>
 <img src="docs/features/post-details-1.png">
@@ -407,6 +413,7 @@ Edit post / Delete post
 - When user open his own post details edit and delete buttons are shown
 - User can edit post with provided edit form
 - User should confirm to delete post
+- User stories covered: 7
 
 <details><summary>See feature images</summary>
 <img src="docs/features/edit-post.png">
@@ -420,6 +427,7 @@ Comments
 
 - Logged in users can leave the comments under post
 - Existent comments are shown in comments section
+- User stories covered: 10
 
 <details><summary>See feature images</summary>
 <img src="docs/features/comments.png">
@@ -431,6 +439,7 @@ Tours page
 
 - Contains all available tours created by admin
 - An authoraized user can choose a tour and book the date for trip
+- User stories covered: 12
 
 <details><summary>See feature images</summary>
 <img src="docs/features/tours.png">
@@ -442,6 +451,7 @@ Booking
 
 - User can book a trip with form provided
 - Unathorized user should log in or create an account
+- User stories covered: 12
 
 <details><summary>See feature images</summary>
 <img src="docs/features/booking.png">
@@ -453,6 +463,7 @@ My Bookings page
 
 - All user's booked trips are shown on page
 - user can edit or delete booking
+- User stories covered: 13
 
 <details><summary>See feature images</summary>
 <img src="docs/features/my_bookings.png">
@@ -464,6 +475,7 @@ Edit / Delete booking
 
 - User can edit booking with form provided
 - To delete the booking user should confirm it
+- User stories covered: 13
 
 <details><summary>See feature images</summary>
 <img src="docs/features/edit_booking.png">
@@ -477,6 +489,7 @@ Contact Us page
 - An authorized user can send a message to site owner
 - When user creates an account with filled in email field, contact us form autofills email field
 - Contact form sends message to admin panel
+- User stories covered: 6
 
 <details><summary>See feature images</summary>
 <img src="docs/features/contact_us.png">
@@ -487,6 +500,7 @@ Contact Us page
 Sign up / Register
 - Allow users to register an acoount
 - Username and password is required, email is optional
+- User stories covered: 14
   
 <details><summary>See feature images</summary>
 <img src="docs/features/signup.png">
@@ -496,6 +510,7 @@ Sign up / Register
 
 Login
 - User can login to create a post, edit/delete own posts, book a tour, edit and delete bookings, leave a comment under posts and send message to site owner
+- User stories covered: 15
 
 <details><summary>See feature images</summary>
 <img src="docs/features/login.png">
@@ -508,6 +523,7 @@ Logout
 
 - Allows the user to securely log out
 - Ask user if they are sure they want to log out
+- User stories covered: 16
 
 <details><summary>See feature images</summary>
 <img src="docs/features/logout.png">
