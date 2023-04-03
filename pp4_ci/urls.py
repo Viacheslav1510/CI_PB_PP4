@@ -24,3 +24,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('booking.urls')),
 ]
+
+handler404 = "pp4_ci.views.page_not_found_view"
