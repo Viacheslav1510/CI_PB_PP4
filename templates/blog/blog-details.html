@@ -28,6 +28,7 @@
                 
                 <form method="POST" class="text-white p-3">
                   <p class="text-white ml-2">You can leave comment to this post:</p>
+                  <label for="id_body">
                   {% csrf_token %}
                   {{ form|crispy }}
                   <input type="submit" class="btn btn-success btn-sm" value="Comment">
