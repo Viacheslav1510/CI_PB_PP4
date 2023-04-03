@@ -819,7 +819,7 @@ Back to [top](#table-of-contents)
 | Open website | Homepage will load | Works as expected |
 | Look at main text  | Description is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_1.png">
 </details>
 
@@ -829,7 +829,7 @@ Back to [top](#table-of-contents)
 ------------ | ------------ | ------------ |
 | Click on any link in the navigation bar | All pages are loaded | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_2-1.png">
 <img src="docs/test/manual/user_story_2-2.png">
 </details>
@@ -842,7 +842,7 @@ Back to [top](#table-of-contents)
 | Open Home page | Header image is shown | Works as expected |
 | Open Blog page | Header image is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_3-1.png">
 <img src="docs/test/manual/user_story_3-2.png">
 </details>
@@ -855,7 +855,7 @@ Back to [top](#table-of-contents)
 | Open Home page | Page is loaded | Works as expected |
 | Scroll down to testimonials section | Testimonials are shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_4-1.png">
 <img src="docs/test/manual/user_story_4-2.png">
 </details>
@@ -868,7 +868,7 @@ Back to [top](#table-of-contents)
 | Open Home page | Page is loaded | Works as expected |
 | Scroll down to about us section | About us section is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_5-1.png">
 <img src="docs/test/manual/user_story_5-2.png">
 </details>
@@ -885,7 +885,7 @@ Only logged in users can contact website owner
 | Click Contact Us link | Contact Us page is loaded | Works as expected |
 | Send message after filled in form | Message about successful process is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_6-1.png">
 <img src="docs/test/manual/user_story_6-2.png">
 <img src="docs/test/manual/user_story_6-3.png">
@@ -908,7 +908,7 @@ Only logged in users can create, edit and delete posts
 | Click delete button to confirm | Deleted post is disappeared on the blog page | Works as expected |
 | Open someone else's post | User cannot edit or delete a post other than his own | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_7-1.png">
 <img src="docs/test/manual/user_story_7-2.png">
 <img src="docs/test/manual/user_story_7-3.png">
@@ -927,7 +927,7 @@ Only logged in users can create, edit and delete posts
 | Click Blog link in navigation | Blog page is loaded | Works as expected |
 | Click any number of page you want to see | Page is changed | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_8-1.png">
 <img src="docs/test/manual/user_story_8-2.png">
 </details>
@@ -939,7 +939,7 @@ Only logged in users can create, edit and delete posts
 | Click Post title or image | Post details is loaded | Works as expected |
 | Scroll down to comments section | Comments section is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_9-1.png">
 <img src="docs/test/manual/user_story_9-2.png">
 </details>
@@ -953,7 +953,7 @@ Only logged in users can create, edit and delete posts
 | Admin has to approve comment to show leaved message | Comments section is shown | Works as expected |
 | After admin approve the comment click Comments button | Comments are shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_10-1.png">
 <img src="docs/test/manual/user_story_10-2.png">
 <img src="docs/test/manual/user_story_10-3.png">
@@ -987,7 +987,7 @@ Only authorized user can book a trip
 | Choose any tour you want to book and click Book Now button | Booking form is shown | Works as expected |
 | Fill in the form and click Book button | My bookings are shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_12-5.png">
 <img src="docs/test/manual/user_story_12-3.png">
 <img src="docs/test/manual/user_story_12-4.png">
@@ -1003,7 +1003,7 @@ Only authorized user can book a trip
 | Click delete button | Delete confirmation is shown | Works as expected |
 | Click delete button to confirm | Message that booking is deleted is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_13-1.png">
 <img src="docs/test/manual/user_story_13-2.png">
 <img src="docs/test/manual/user_story_13-3.png">
@@ -1018,7 +1018,7 @@ Only authorized user can book a trip
 | Click Sign Up link in navigation | Sign up page is loaded | Works as expected |
 | Fill in sign up form | Edit booking form is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_14-1.png">
 <img src="docs/test/manual/user_story_14-2.png">
 <img src="docs/test/manual/user_story_14-3.png">
@@ -1038,7 +1038,7 @@ If user tries to create existent username, form show message
 | User can click remember me button to remember their information | Program memorize user information | Works as expected |
 | Click Log In button | User is logged in and message is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_15-1.png">
 <img src="docs/test/manual/user_story_15-2.png">
 <img src="docs/test/manual/user_story_15-3.png">
@@ -1052,7 +1052,7 @@ If user tries to create existent username, form show message
 | Click Logout link in navigation | Log out confirmation page is loaded | Works as expected |
 | Click logout to confirm | User logged out and message is shown | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_16-1.png">
 <img src="docs/test/manual/user_story_16-2.png">
 <img src="docs/test/manual/user_story_16-3.png">
@@ -1065,7 +1065,7 @@ If user tries to create existent username, form show message
 | Open any page and scroll down at bottom of page | See footer | Works as expected |
 | Click on any footer link | Page opened in separate window | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_17-1.png">
 <img src="docs/test/manual/user_story_17-2.png">
 </details>
@@ -1086,7 +1086,7 @@ Haven't provided. Left for further development
 ------------ | ------------ | ------------ |
 | Open any page on small screen | All content is responsive | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_20-1.png">
 <img src="docs/test/manual/user_story_20-2.png">
 <img src="docs/test/manual/user_story_20-3.png">
@@ -1101,7 +1101,7 @@ Haven't provided. Left for further development
 | Open admin page | Log in form is shown | Works as expected |
 | Fill in form with Admin information | Admin is logged in | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_21-1.png">
 <img src="docs/test/manual/user_story_21-2.png">
 </details>
@@ -1113,7 +1113,7 @@ Haven't provided. Left for further development
 | Open any model on admin page | Feilds, search bar and filter are shown | Works as expected |
 | Filter or search content you want | Search and filter work | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_22-1.png">
 <img src="docs/test/manual/user_story_22-2.png">
 <img src="docs/test/manual/user_story_22-3.png">
@@ -1126,7 +1126,7 @@ Haven't provided. Left for further development
 | Open any model on admin page | Feilds, search bar and filter are shown | Works as expected |
 | Filter or search content you want | Search and filter work | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_23-1.png">
 <img src="docs/test/manual/user_story_23-2.png">
 </details>
@@ -1139,7 +1139,7 @@ Haven't provided. Left for further development
 | Click add tour button and fill in all fields | Fields are shown | Works as expected |
 | Save the tour | New tour is shown in admin panel and on the website | Works as expected |
 
-<details><summary></summary>
+<details><summary>Details</summary>
 <img src="docs/test/manual/user_story_24-1.png">
 <img src="docs/test/manual/user_story_24-2.png">
 <img src="docs/test/manual/user_story_24-3.png">
@@ -1484,7 +1484,7 @@ Back to [top](#table-of-contents)
 
 Images
 
-Images used were sourced from www.wallpaperflare.com and an AI image generator (www.zdnet.com) was used for the testimonials user photos.
+Images were used from www.wallpaperflare.com and an AI image generator (www.zdnet.com) was used for the testimonials user photos.
 
 Content
 
