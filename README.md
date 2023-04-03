@@ -1,7 +1,7 @@
 # Kerry Lovers <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/County_Kerry_Coat_of_Arms.png/800px-County_Kerry_Coat_of_Arms.png" style="width: 30px;height:30px;">
 
 
-![Am I Responsive]()
+![Am I Responsive](docs/am-i-responsive.png)
 
 **Developer: Slava Kondriianenko**
 
@@ -47,10 +47,7 @@
     - [Fork Repository](#fork-repository)
     - [Clone Repository](#clone-repository)
   - [Credits](#credits)
-    - [Images](#images)
-    - [Code](#code)
   - [Acknowledgements](#acknowledgements)
-    - [Special thanks to the following:](#special-thanks-to-the-following)
     
 ## About
 
@@ -1485,16 +1482,16 @@ Back to [top](#table-of-contents)
 
 ## Credits
 
-### Images
+Images
 
-Images used were sourced from Pexels.com and an AI image generator (Dalle2) was used for an image with the permission from OpenAI
+Images used were sourced from www.wallpaperflare.com and an AI image generator (www.zdnet.com) was used for the testimonials user photos.
 
-### Code
+Content
 
-Bootstrap dark navigation theme was used alongside boostrap classes and carousel
+Content for posts and tours was taken from www.tripadvisor.ie.  
 
 ## Acknowledgements
 
-### Special thanks to the following:
-- Code Institute
-- My Mentor Mo Shami
+- Thanks to my wife for inspiration 
+- Thanks to Code Institute for content
+- Thanks to my Mentor Mohammad Shami for his advices
