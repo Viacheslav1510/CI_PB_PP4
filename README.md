@@ -809,13 +809,34 @@ WAVE was used to test the websites accessibility.
 - <details><summary>Blog</summary>
     <img src="docs/validation/wave/blog.png">
     </details>
+- <details><summary>Add Post</summary>
+    <img src="docs/validation/wave/create_post.png">
+    </details>
+- <details><summary>Edit Post</summary>
+    <img src="docs/validation/wave/edit_post.png">
+    </details>
+- <details><summary>Delete Post</summary>
+    <img src="docs/validation/wave/delete_post.png">
+    </details>
 - <details><summary>Tours</summary>
     <img src="docs/validation/wave/tours.png">
+    </details>
+- <details><summary>Book a Tour</summary>
+    <img src="docs/validation/wave/book_a_tour.png">
+    </details>
+- <details><summary>My Bookings</summary>
+    <img src="docs/validation/wave/my_bookings.png">
+    </details>
+- <details><summary>Edit Booking</summary>
+    <img src="docs/validation/wave/edit_booking.png">
+    </details>
+- <details><summary>Contact Us</summary>
+    <img src="docs/validation/wave/contact_us.png">
     </details>
 - <details><summary>Sign Up</summary>
     <img src="docs/validation/wave/sign_up.png">
     </details>
-- <details><summary>Login</summary>
+- <details><summary>Log In</summary>
     <img src="docs/validation/wave/login.png">
     </details>
 
